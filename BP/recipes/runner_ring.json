@@ -1,0 +1,45 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "dorios:runner_ring"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"R": {
+				"item": "dorios:empty_ring"
+			},
+			"H": {
+				"item": "rabbit_hide"
+			},
+			"F": {
+				"item": "feather"
+			},
+			"P": {
+				"item": "minecraft:potion",
+				"data": 14
+			},
+			"D": {
+				"item": "diamond"
+			},
+			"A": {
+				"item": "rabbit_foot"
+			}
+		},
+		"pattern": [
+			"PDP",
+			"HRH",
+			"FAF"
+		],
+		"result": {
+			"item": "dorios:runner_ring"
+		},
+		"unlock": [
+			{
+				"item": "dorios:empty_ring"
+			}
+		]
+	}
+}

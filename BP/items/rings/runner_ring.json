@@ -1,0 +1,15 @@
+{
+	"format_version": "1.21.10",
+	"minecraft:item": {
+		"description": {
+			"identifier": "dorios:runner_ring",
+			"menu_category": {
+				"category": "equipment"
+			}
+		},
+		"components": {
+			"minecraft:icon": "dorios_runner_ring",
+			"minecraft:max_stack_size": 1
+		}
+	}
+}

@@ -1,0 +1,23 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "dorios:abyssal_orb"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"ingredients": [
+			{
+				"item": "heart_of_the_sea",
+				"count": 2
+			},
+			{
+				"item": "dorios:dead_abyssal_orb"
+			}
+		],
+		"result": {
+			"item": "dorios:abyssal_orb"
+		}
+	}
+}

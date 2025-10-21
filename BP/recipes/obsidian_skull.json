@@ -1,0 +1,32 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "dorios:obsidian_skull"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"O": {
+				"item": "obsidian"
+			},
+			"S": {
+				"item": "wither_skeleton_skull"
+			}
+		},
+		"pattern": [
+			"OOO",
+			"OSO",
+			"OOO"
+		],
+		"result": {
+			"item": "dorios:obsidian_skull"
+		},
+		"unlock": [
+			{
+				"item": "obsidian"
+			}
+		]
+	}
+}

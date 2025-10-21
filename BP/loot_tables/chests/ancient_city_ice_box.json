@@ -1,0 +1,114 @@
+{
+  "pools": [
+        {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "weight": 8,
+          "name": "arena:blindfold"
+        }
+          ]
+        },
+    {
+      "rolls": {
+        "min": 4,
+        "max": 10.0
+      },
+      "bonus_rolls": 0,
+      "entries": [
+        {
+          "type": "item",
+          "name": "arena:blindfold",
+          "weight": 1
+        },
+        {
+          "type": "item",
+          "functions": [
+            {
+              "function": "minecraft:set_stew_effect",
+              "effects": [
+                {
+                  "id": 0
+                },
+                {
+                  "id": 3
+                }
+              ]
+            },
+            {
+              "function": "set_count",
+              "count": {
+                "min": 2,
+                "max": 6.0
+              },
+              "add": false
+            }
+          ],
+          "name": "minecraft:suspicious_stew",
+          "weight": 2
+        },
+        {
+          "type": "item",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 10.0
+              },
+              "add": false
+            }
+          ],
+          "name": "minecraft:golden_carrot",
+          "weight": 2
+        },
+        {
+          "type": "item",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 10.0
+              },
+              "add": false
+            }
+          ],
+          "name": "minecraft:baked_potato",
+          "weight": 2
+        },
+        {
+          "type": "item",
+          "weight": 3,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 2,
+                "max": 6.0
+              },
+              "add": false
+            }
+          ],
+          "name": "minecraft:packed_ice"
+        },
+        {
+          "type": "item",
+          "weight": 5,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 2,
+                "max": 6.0
+              },
+              "add": false
+            }
+          ],
+          "name": "minecraft:snowball"
+        }
+      ]
+    }
+  ]
+}

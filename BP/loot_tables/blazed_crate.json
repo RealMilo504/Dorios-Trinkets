@@ -1,0 +1,60 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "weight": 20,
+          "name": "dorios:blazed_heart_necklace"
+        },
+        {
+          "type": "empty",
+          "weight": 80
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "weight": 40,
+          "name": "dorios:blazing_amulet"
+        },
+        {
+          "type": "empty",
+          "weight": 60
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "weight": 25,
+          "name": "dorios:strong_inferno_ring"
+        },
+        {
+          "type": "empty",
+          "weight": 75
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "weight": 30,
+          "name": "dorios:molten_quiver"
+        },
+        {
+          "type": "empty",
+          "weight": 70
+        }
+      ]
+    }
+  ]
+}

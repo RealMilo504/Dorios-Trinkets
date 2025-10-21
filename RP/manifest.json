@@ -1,0 +1,44 @@
+{
+	"format_version": 2,
+	"metadata": {
+		"authors": [
+			"Dorios Studios"
+		]
+	},
+	"header": {
+		"name": "Dorios' Trinkets",
+		"description": "Version 1.2.0 §6Dorios Studios\n§fArt by §dArena, §5Temu Ware §f& §4@bragagalvan_",
+		"min_engine_version": [
+			1,
+			21,
+			0
+		],
+		"uuid": "2b7e4961-39bb-47ca-a06d-aa03dd15c007",
+		"version": [
+			1,
+			2,
+			0
+		]
+	},
+	"modules": [
+		{
+			"type": "resources",
+			"uuid": "8950c808-410c-4481-b23f-da6e25d9b894",
+			"version": [
+				1,
+				2,
+				0
+			]
+		}
+	],
+	"dependencies": [
+		{
+			"uuid": "36e708a5-830f-425f-bbda-3f7031fe5428",
+			"version": [
+				1,
+				2,
+				0
+			]
+		}
+	]
+}

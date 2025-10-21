@@ -1,0 +1,18 @@
+{
+	"format_version": "1.21.50",
+	"minecraft:block": {
+		"description": {
+			"identifier": "dorios:lava_flow_0"
+		},
+		"components": {
+			"minecraft:tick": {
+				"interval_range": [
+					40,
+					40
+				]
+			},
+			"dorios:block_tick": {}
+		},
+		"permutations": []
+	}
+}

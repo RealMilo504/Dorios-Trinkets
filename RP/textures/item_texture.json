@@ -1,0 +1,282 @@
+{
+	"resource_pack_name": "Pruebas",
+	"texture_name": "atlas.items",
+	"texture_data": {
+		"dorios_trinket_manager": {
+			"textures": "textures/items/trinket_manager"
+		},
+		"dorios_lava_waders": {
+			"textures": "textures/items/lava_waders"
+		},
+		"dorios_fire_gauntlet": {
+			"textures": "textures/items/fire_gauntlet"
+		},
+		"dorios_molten_quiver": {
+			"textures": "textures/items/molten_quiver"
+		},
+		"dorios_night_vision_goggles": {
+			"textures": "textures/items/night_vision_goggles"
+		},
+		"dorios_rotten_heart": {
+			"textures": "textures/items/rotten_heart"
+		},
+		"dorios_candy_heart": {
+			"textures": "textures/items/candy_heart"
+		},
+		"dorios_immaculate_heart": {
+			"textures": "textures/items/immaculate_heart"
+		},
+		"dorios_sacred_heart": {
+			"textures": "textures/items/sacred_heart"
+		},
+		"dorios_obsidian_skull": {
+			"textures": "textures/items/obsidian_skull"
+		},
+		"dorios_rush_of_fear": {
+			"textures": "textures/items/rush_of_fear"
+		},
+		"dorios_bezoar": {
+			"textures": "textures/items/bezoar"
+		},
+		"dorios_guardian_ring": {
+			"textures": "textures/items/guardian_ring"
+		},
+		"dorios_runner_ring": {
+			"textures": "textures/items/runner_ring"
+		},
+		"dorios_healer_ring": {
+			"textures": "textures/items/healer_ring"
+		},
+		"dorios_miner_ring": {
+			"textures": "textures/items/miner_ring"
+		},
+		"dorios_empty_ring": {
+			"textures": "textures/items/empty_ring_material"
+		},
+		"dorios_repair_talisman": {
+			"textures": "textures/items/repair_talisman"
+		},
+		"dorios_ice_gauntlet": {
+			"textures": "textures/items/ice_gauntlet"
+		},
+		"dorios_mender_pendant": {
+			"textures": "textures/items/mender_pendant"
+		},
+		"dorios_frost_quiver": {
+			"textures": "textures/items/frost_quiver"
+		},
+		"dorios_black_heart": {
+			"textures": "textures/items/black_heart"
+		},
+		"dorios_soul_heart": {
+			"textures": "textures/items/soul_heart"
+		},
+		"dorios_warden_heart": {
+			"textures": "textures/items/warden_heart"
+		},
+		"dorios_wither_heart": {
+			"textures": "textures/items/wither_heart"
+		},
+		"dorios_flippers": {
+			"textures": "textures/items/flippers"
+		},
+		"dorios_eternal_heart": {
+			"textures": "textures/items/eternal_heart"
+		},
+		"dorios_warrior_ring": {
+			"textures": "textures/items/warrior_ring"
+		},
+		"dorios_dead_abyssal_orb": {
+			"textures": "textures/items/dead_abyssal_orb"
+		},
+		"dorios_scroll": {
+			"textures": "textures/items/scroll"
+		},
+		"dorios_ethereal_sight_mask": {
+			"textures": "textures/items/scroll"
+		},
+		"dorios_abyssal_orb": {
+			"textures": "textures/items/abyssal_orb"
+		},
+		"dorios_abyssal_clam_shell": {
+			"textures": "textures/items/abyssal_clam_shell"
+		},
+		"dorios_venom_gauntlet": {
+			"textures": "textures/items/venom_gauntlet"
+		},
+		"dorios_holy_cross": {
+			"textures": "textures/items/holy_cross"
+		},
+		"dorios_idle_bloom": {
+			"textures": "textures/items/idle_bloom"
+		},
+		"dorios_broken_paladin_helmet": {
+			"textures": "textures/items/broken_warrior_helmet"
+		},
+		"dorios_restored_paladin_helmet": {
+			"textures": "textures/items/warrior_helmet"
+		},
+		"dorios_blood_pact": {
+			"textures": "textures/items/blood_pact"
+		},
+		"dorios_cloud_steps_boots": {
+			"textures": "textures/items/cloud_steps_boots"
+		},
+		"dorios_blood_pendant": {
+			"textures": "textures/items/blood_pendant"
+		},
+		"dorios_bloodbound_amulet": {
+			"textures": "textures/items/bloodbound_amulet"
+		},
+		"dorios_abyssal_diver_helmet": {
+			"textures": "textures/items/abyssal_diver_helmet"
+		},
+		"dorios_rabbit_rush": {
+			"textures": "textures/items/rabbit_rush"
+		},
+		"dorios_night_vision_mask": {
+			"textures": "textures/items/night_vision_mask"
+		},
+		"dorios_fire_claw": {
+			"textures": "textures/items/fire_claw"
+		},
+		"dorios_venom_claw": {
+			"textures": "textures/items/venom_claw"
+		},
+		"dorios_ice_claw": {
+			"textures": "textures/items/ice_claw"
+		},
+		"dorios_venom_quiver": {
+			"textures": "textures/items/venom_quiver"
+		},
+		"dorios_heavy_healer_ring": {
+			"textures": "textures/items/heavy_healer_ring"
+		},
+		"dorios_heavy_miner_ring": {
+			"textures": "textures/items/heavy_miner_ring"
+		},
+		"dorios_heavy_warrior_ring": {
+			"textures": "textures/items/heavy_warrior_ring"
+		},
+		"dorios_heavy_empty_ring": {
+			"textures": "textures/items/heavy_empty_ring_material"
+		},
+		"dorios_heavy_guardian_ring": {
+			"textures": "textures/items/heavy_guardian_ring"
+		},
+		"dorios_heavy_runner_ring": {
+			"textures": "textures/items/heavy_runner_ring"
+		},
+		"dorios_dragon_heart": {
+			"textures": "textures/items/dragons_heart"
+		},
+		"dorios_strong_ancient_ring": {
+			"textures": "textures/items/strong_ancient_ring"
+		},
+		"dorios_strong_breeze_ring": {
+			"textures": "textures/items/strong_breeze_ring"
+		},
+		"dorios_strong_brute_ring": {
+			"textures": "textures/items/strong_brute_ring"
+		},
+		"dorios_strong_celestial_ring": {
+			"textures": "textures/items/strong_celestial_ring"
+		},
+		"dorios_strong_echo_ring": {
+			"textures": "textures/items/strong_echo_ring"
+		},
+		"dorios_strong_ender_ring": {
+			"textures": "textures/items/strong_ender_ring"
+		},
+		"dorios_strong_fortress_ring": {
+			"textures": "textures/items/strong_fortress_ring"
+		},
+		"dorios_strong_jade_ring": {
+			"textures": "textures/items/strong_jade_ring"
+		},
+		"dorios_strong_shulker_ring": {
+			"textures": "textures/items/strong_shulker_ring"
+		},
+		"dorios_strong_trader_ring": {
+			"textures": "textures/items/strong_trader_ring"
+		},
+		"dorios_voodoo": {
+			"textures": "textures/items/voodoo"
+		},
+		"dorios_tideforged_pendant": {
+			"textures": "textures/items/Tideforged Pendant"
+		},
+		"dorios_tideforged_carapace": {
+			"textures": "textures/items/Tideforged Carapace"
+		},
+		"dorios_tideforged_heart": {
+			"textures": "textures/items/Tideforged Heart"
+		},
+		"dorios_tideforged_eye": {
+			"textures": "textures/items/Tideforged Eye"
+		},
+		"dorios_bloodtide_chalice": {
+			"textures": "textures/items/bloodtide_chalice"
+		},
+		"dorios_bloodgem": {
+			"textures": "textures/items/bloodgem"
+		},
+		"dorios_strong_inferno_ring": {
+			"textures": "textures/items/strong_inferno_ring"
+		},
+		"dorios_strong_abyssal_ring": {
+			"textures": "textures/items/strong_abyssal_ring"
+		},
+		"dorios_bloodstained_heart": {
+			"textures": "textures/items/bloodstained_heart"
+		},
+		"dorios_strong_blood_ring": {
+			"textures": "textures/items/strong_blood_ring"
+		},
+		"dorios_bloodbound_emblem": {
+			"textures": "textures/items/bloodbound_emblem"
+		},
+		"dorios_tideforged_stars": {
+			"textures": "textures/items/tideforged_stars"
+		},
+		"dorios_tideforged_ring": {
+			"textures": "textures/items/tideforged_ring"
+		},
+		"dorios_tideforged_knuckles": {
+			"textures": "textures/items/tideforged_knuckles"
+		},
+		"dorios_blazing_amulet": {
+			"textures": "textures/items/blazing_amulet"
+		},
+		"dorios_blazed_heart_necklace": {
+			"textures": "textures/items/blazed_heart_necklace"
+		},
+		"dorios_abyssal_sun_amulet": {
+			"textures": "textures/items/abyssal_sun_amulet"
+		},
+		"dorios_paladin_helmet": {
+			"textures": "textures/items/paladin_helmet"
+		},
+		"dorios_paladin_chestplate": {
+			"textures": "textures/items/paladin_chestplate"
+		},
+		"dorios_paladin_leggings": {
+			"textures": "textures/items/paladin_leggings"
+		},
+		"dorios_paladin_boots": {
+			"textures": "textures/items/paladin_boots"
+		},
+		"dorios_blood_helmet": {
+			"textures": "textures/items/blood_helmet"
+		},
+		"dorios_blood_chestplate": {
+			"textures": "textures/items/blood_chestplate"
+		},
+		"dorios_blood_leggings": {
+			"textures": "textures/items/blood_leggings"
+		},
+		"dorios_blood_boots": {
+			"textures": "textures/items/blood_boots"
+		}
+	}
+}

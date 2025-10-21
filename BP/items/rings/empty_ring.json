@@ -1,0 +1,15 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:item": {
+		"description": {
+			"identifier": "dorios:empty_ring",
+			"menu_category": {
+				"category": "items"
+			}
+		},
+		"components": {
+			"minecraft:icon": "dorios_empty_ring",
+			"minecraft:max_stack_size": 1
+		}
+	}
+}

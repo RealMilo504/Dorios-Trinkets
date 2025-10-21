@@ -1,0 +1,27 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "dorios:empty_ring"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"P": {
+				"item": "iron_nugget"
+			},
+			"I": {
+				"item": "iron_ingot"
+			}
+		},
+		"pattern": [
+			"PIP",
+			"I I",
+			"PIP"
+		],
+		"result": {
+			"item": "dorios:empty_ring"
+		}
+	}
+}

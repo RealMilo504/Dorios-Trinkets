@@ -1,0 +1,63 @@
+{
+	"format_version": 2,
+	"metadata": {
+		"authors": [
+			"Dorios Studios"
+		]
+	},
+	"header": {
+		"name": "Dorios' Trinkets",
+		"description": "Version 2.0.0 §6Dorios Studios",
+		"min_engine_version": [
+			1,
+			21,
+			0
+		],
+		"uuid": "36e708a5-830f-425f-bbda-3f7031fe5428",
+		"version": [
+			1,
+			2,
+			0
+		]
+	},
+	"modules": [
+		{
+			"type": "data",
+			"uuid": "fdbf9e87-017f-4de2-bf14-3e878808acba",
+			"version": [
+				1,
+				2,
+				0
+			]
+		},
+		{
+			"type": "script",
+			"language": "javascript",
+			"uuid": "74ce8da0-fa69-4fe2-bb9d-fa0019d303f7",
+			"entry": "scripts/main.js",
+			"version": [
+				1,
+				2,
+				0
+			]
+		}
+	],
+	"dependencies": [
+		{
+			"uuid": "2b7e4961-39bb-47ca-a06d-aa03dd15c007",
+			"version": [
+				1,
+				2,
+				0
+			]
+		},
+		{
+			"module_name": "@minecraft/server",
+			"version": "2.0.0"
+		},
+		{
+			"module_name": "@minecraft/server-ui",
+			"version": "2.0.0"
+		}
+	]
+}

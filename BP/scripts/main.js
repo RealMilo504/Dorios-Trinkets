@@ -1,0 +1,6 @@
+// import './trinkets/trinkets.js'
+// import './trinkets/trinketsInv.js'
+import './block_tick.js'
+import './dorios_drops.js'
+import './config.js'
+import './system.js'

@@ -1,0 +1,20 @@
+{
+	"format_version": "1.10.0",
+	"animations": {
+		"animation.arun": {
+			"timeline": {
+				"0.1": [
+					"/tag @s add abuff"
+				],
+				"0.2": [
+					"/tag @s remove abuff",
+					"/tag @s add abuffoff"
+				],
+				"0.3": [
+					"/tag @s remove abuffoff"
+				]
+			},
+			"animation_length": 1
+		}
+	}
+}

@@ -1,0 +1,804 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.blood_leggings",
+				"texture_width": 128,
+				"texture_height": 128,
+				"visible_bounds_width": 5,
+				"visible_bounds_height": 4.5,
+				"visible_bounds_offset": [
+					0,
+					1.75,
+					0
+				]
+			},
+			"bones": [
+				{
+					"name": "waist",
+					"pivot": [
+						0,
+						0,
+						0
+					]
+				},
+				{
+					"name": "body",
+					"parent": "waist",
+					"pivot": [
+						0,
+						24,
+						0
+					]
+				},
+				{
+					"name": "Legging_Body",
+					"parent": "body",
+					"pivot": [
+						0,
+						12,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								-4,
+								12,
+								-2
+							],
+							"size": [
+								8,
+								12,
+								4
+							],
+							"inflate": 0.253,
+							"uv": [
+								49,
+								10
+							]
+						}
+					]
+				},
+				{
+					"name": "LeggingBody_CenterFront_Tasset",
+					"parent": "Legging_Body",
+					"pivot": [
+						0,
+						12.5,
+						-3
+					],
+					"rotation": [
+						-12.5,
+						0,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								-2.5,
+								6.5,
+								-3
+							],
+							"size": [
+								5,
+								7,
+								1
+							],
+							"uv": [
+								61,
+								113
+							]
+						}
+					]
+				},
+				{
+					"name": "LeggingBody_CenterBack_Tasset",
+					"parent": "Legging_Body",
+					"pivot": [
+						0,
+						12.5,
+						3
+					],
+					"rotation": [
+						15,
+						0,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								-2.5,
+								6.5,
+								2
+							],
+							"size": [
+								5,
+								7,
+								1
+							],
+							"uv": [
+								61,
+								113
+							]
+						}
+					]
+				},
+				{
+					"name": "leftLeg",
+					"parent": "waist",
+					"pivot": [
+						2,
+						12,
+						0
+					]
+				},
+				{
+					"name": "Legging_RightLeg",
+					"parent": "leftLeg",
+					"pivot": [
+						2,
+						12,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								0,
+								0,
+								-2
+							],
+							"size": [
+								4,
+								12,
+								4
+							],
+							"inflate": 0.255,
+							"uv": [
+								79,
+								54
+							]
+						}
+					]
+				},
+				{
+					"name": "Legging_RightLeg_Parts",
+					"parent": "Legging_RightLeg",
+					"pivot": [
+						2,
+						12,
+						0
+					]
+				},
+				{
+					"name": "Legging_RightLeg_Tasset",
+					"parent": "Legging_RightLeg_Parts",
+					"pivot": [
+						3.25,
+						18,
+						0
+					],
+					"rotation": [
+						0,
+						0,
+						-10
+					],
+					"cubes": [
+						{
+							"origin": [
+								0.25,
+								8,
+								-1.5
+							],
+							"size": [
+								3,
+								6,
+								3
+							],
+							"inflate": 0.125,
+							"pivot": [
+								3,
+								18,
+								0
+							],
+							"rotation": [
+								0,
+								0,
+								-7.5
+							],
+							"uv": [
+								11,
+								103
+							]
+						},
+						{
+							"origin": [
+								0.25,
+								10,
+								-0.5
+							],
+							"size": [
+								3,
+								4,
+								2
+							],
+							"inflate": 0.125,
+							"pivot": [
+								3,
+								18,
+								1.5
+							],
+							"rotation": [
+								15,
+								0,
+								-5
+							],
+							"uv": [
+								92,
+								107
+							]
+						},
+						{
+							"origin": [
+								0.25,
+								10,
+								-1.5
+							],
+							"size": [
+								3,
+								4,
+								2
+							],
+							"inflate": 0.125,
+							"pivot": [
+								3,
+								18,
+								-1.5
+							],
+							"rotation": [
+								-15,
+								0,
+								-5
+							],
+							"uv": [
+								103,
+								107
+							]
+						}
+					]
+				},
+				{
+					"name": "Legging_RightLeg_Tasset2",
+					"parent": "Legging_RightLeg_Parts",
+					"pivot": [
+						3.25,
+						15,
+						0
+					],
+					"rotation": [
+						0,
+						0,
+						-10
+					],
+					"cubes": [
+						{
+							"origin": [
+								0.25,
+								5,
+								-1.5
+							],
+							"size": [
+								3,
+								6,
+								3
+							],
+							"inflate": 0.125,
+							"pivot": [
+								3,
+								15,
+								0
+							],
+							"rotation": [
+								0,
+								0,
+								-7.5
+							],
+							"uv": [
+								11,
+								103
+							]
+						},
+						{
+							"origin": [
+								0.25,
+								7,
+								-0.5
+							],
+							"size": [
+								3,
+								4,
+								2
+							],
+							"inflate": 0.125,
+							"pivot": [
+								3,
+								15,
+								1.5
+							],
+							"rotation": [
+								15,
+								0,
+								-5
+							],
+							"uv": [
+								92,
+								107
+							]
+						},
+						{
+							"origin": [
+								0.25,
+								7,
+								-1.5
+							],
+							"size": [
+								3,
+								4,
+								2
+							],
+							"inflate": 0.125,
+							"pivot": [
+								3,
+								15,
+								-1.5
+							],
+							"rotation": [
+								-15,
+								0,
+								-5
+							],
+							"uv": [
+								103,
+								107
+							]
+						}
+					]
+				},
+				{
+					"name": "Legging_RightLeg_Tasset3",
+					"parent": "Legging_RightLeg_Parts",
+					"pivot": [
+						3.25,
+						12,
+						0
+					],
+					"rotation": [
+						0,
+						0,
+						-10
+					],
+					"cubes": [
+						{
+							"origin": [
+								0.25,
+								2,
+								-1.5
+							],
+							"size": [
+								3,
+								6,
+								3
+							],
+							"inflate": 0.125,
+							"pivot": [
+								3,
+								12,
+								0
+							],
+							"rotation": [
+								0,
+								0,
+								-7.5
+							],
+							"uv": [
+								11,
+								103
+							]
+						},
+						{
+							"origin": [
+								0.25,
+								4,
+								-0.5
+							],
+							"size": [
+								3,
+								4,
+								2
+							],
+							"inflate": 0.125,
+							"pivot": [
+								3,
+								12,
+								1.5
+							],
+							"rotation": [
+								15,
+								0,
+								-5
+							],
+							"uv": [
+								92,
+								107
+							]
+						},
+						{
+							"origin": [
+								0.25,
+								4,
+								-1.5
+							],
+							"size": [
+								3,
+								4,
+								2
+							],
+							"inflate": 0.125,
+							"pivot": [
+								3,
+								12,
+								-1.5
+							],
+							"rotation": [
+								-15,
+								0,
+								-5
+							],
+							"uv": [
+								103,
+								107
+							]
+						}
+					]
+				},
+				{
+					"name": "rightLeg",
+					"parent": "waist",
+					"pivot": [
+						-2,
+						12,
+						0
+					]
+				},
+				{
+					"name": "Legging_LeftLeg",
+					"parent": "rightLeg",
+					"pivot": [
+						-2,
+						12,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								-4,
+								0,
+								-2
+							],
+							"size": [
+								4,
+								12,
+								4
+							],
+							"inflate": 0.255,
+							"uv": [
+								76,
+								21
+							]
+						}
+					]
+				},
+				{
+					"name": "Legging_LeftLeg_Parts",
+					"parent": "Legging_LeftLeg",
+					"pivot": [
+						-2,
+						12,
+						0
+					]
+				},
+				{
+					"name": "Legging_LeftLeg_Tasset",
+					"parent": "Legging_LeftLeg_Parts",
+					"pivot": [
+						-3.25,
+						18,
+						0
+					],
+					"rotation": [
+						0,
+						0,
+						10
+					],
+					"cubes": [
+						{
+							"origin": [
+								-3.25,
+								8,
+								-1.5
+							],
+							"size": [
+								3,
+								6,
+								3
+							],
+							"inflate": 0.125,
+							"pivot": [
+								-3,
+								18,
+								0
+							],
+							"rotation": [
+								0,
+								0,
+								7.5
+							],
+							"uv": [
+								39,
+								101
+							]
+						},
+						{
+							"origin": [
+								-3.25,
+								10,
+								-0.5
+							],
+							"size": [
+								3,
+								4,
+								2
+							],
+							"inflate": 0.125,
+							"pivot": [
+								-3,
+								18,
+								1.5
+							],
+							"rotation": [
+								15,
+								0,
+								5
+							],
+							"uv": [
+								52,
+								101
+							]
+						},
+						{
+							"origin": [
+								-3.25,
+								10,
+								-1.5
+							],
+							"size": [
+								3,
+								4,
+								2
+							],
+							"inflate": 0.125,
+							"pivot": [
+								-3,
+								18,
+								-1.5
+							],
+							"rotation": [
+								-15,
+								0,
+								5
+							],
+							"uv": [
+								102,
+								42
+							]
+						}
+					]
+				},
+				{
+					"name": "Legging_LeftLeg_Tasset2",
+					"parent": "Legging_LeftLeg_Parts",
+					"pivot": [
+						-3.25,
+						15,
+						0
+					],
+					"rotation": [
+						0,
+						0,
+						10
+					],
+					"cubes": [
+						{
+							"origin": [
+								-3.25,
+								5,
+								-1.5
+							],
+							"size": [
+								3,
+								6,
+								3
+							],
+							"inflate": 0.125,
+							"pivot": [
+								-3,
+								15,
+								0
+							],
+							"rotation": [
+								0,
+								0,
+								7.5
+							],
+							"uv": [
+								39,
+								101
+							]
+						},
+						{
+							"origin": [
+								-3.25,
+								7,
+								-0.5
+							],
+							"size": [
+								3,
+								4,
+								2
+							],
+							"inflate": 0.125,
+							"pivot": [
+								-3,
+								15,
+								1.5
+							],
+							"rotation": [
+								15,
+								0,
+								5
+							],
+							"uv": [
+								52,
+								101
+							]
+						},
+						{
+							"origin": [
+								-3.25,
+								7,
+								-1.5
+							],
+							"size": [
+								3,
+								4,
+								2
+							],
+							"inflate": 0.125,
+							"pivot": [
+								-3,
+								15,
+								-1.5
+							],
+							"rotation": [
+								-15,
+								0,
+								5
+							],
+							"uv": [
+								102,
+								42
+							]
+						}
+					]
+				},
+				{
+					"name": "Legging_LeftLeg_Tasset3",
+					"parent": "Legging_LeftLeg_Parts",
+					"pivot": [
+						-3.25,
+						12,
+						0
+					],
+					"rotation": [
+						0,
+						0,
+						10
+					],
+					"cubes": [
+						{
+							"origin": [
+								-3.25,
+								2,
+								-1.5
+							],
+							"size": [
+								3,
+								6,
+								3
+							],
+							"inflate": 0.125,
+							"pivot": [
+								-3,
+								12,
+								0
+							],
+							"rotation": [
+								0,
+								0,
+								7.5
+							],
+							"uv": [
+								39,
+								101
+							]
+						},
+						{
+							"origin": [
+								-3.25,
+								4,
+								-0.5
+							],
+							"size": [
+								3,
+								4,
+								2
+							],
+							"inflate": 0.125,
+							"pivot": [
+								-3,
+								12,
+								1.5
+							],
+							"rotation": [
+								15,
+								0,
+								5
+							],
+							"uv": [
+								52,
+								101
+							]
+						},
+						{
+							"origin": [
+								-3.25,
+								4,
+								-1.5
+							],
+							"size": [
+								3,
+								4,
+								2
+							],
+							"inflate": 0.125,
+							"pivot": [
+								-3,
+								12,
+								-1.5
+							],
+							"rotation": [
+								-15,
+								0,
+								5
+							],
+							"uv": [
+								102,
+								42
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

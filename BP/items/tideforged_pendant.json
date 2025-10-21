@@ -1,0 +1,15 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:item": {
+		"description": {
+			"identifier": "dorios:tideforged_pendant",
+			"menu_category": {
+				"category": "equipment"
+			}
+		},
+		"components": {
+			"minecraft:icon": "dorios_tideforged_pendant",
+			"minecraft:max_stack_size": 1
+		}
+	}
+}

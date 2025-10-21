@@ -1,0 +1,42 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "dorios:guardian_ring"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"R": {
+				"item": "dorios:empty_ring"
+			},
+			"D": {
+				"item": "diamond_block"
+			},
+			"N": {
+				"item": "netherite_ingot"
+			},
+			"P": {
+				"item": "minecraft:potion",
+				"data": 37
+			},
+			"S": {
+				"item": "nether_star"
+			}
+		},
+		"pattern": [
+			"DSD",
+			"NRN",
+			"PNP"
+		],
+		"result": {
+			"item": "dorios:guardian_ring"
+		},
+		"unlock": [
+			{
+				"item": "dorios:empty_ring"
+			}
+		]
+	}
+}

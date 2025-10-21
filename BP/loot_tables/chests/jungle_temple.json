@@ -1,0 +1,257 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "weight": 8,
+          "name": "arena:anklet_of_the_wind"
+        },
+        {
+          "type": "item",
+          "weight": 8,
+          "name": "arena:flower_boots"
+        },
+        {
+          "type": "item",
+          "weight": 8,
+          "name": "arena:feral_claws"
+        },
+        {
+          "type": "empty",
+          "weight": 8
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "arena:bunny_hoppers",
+          "weight": 1
+        },
+        {
+          "type": "item",
+          "name": "arena:kitty_slippers",
+          "weight": 2
+        },
+        {
+          "type": "empty",
+          "weight": 6
+        }
+      ]
+    },
+    {
+      "rolls": {
+        "min": 2,
+        "max": 6
+      },
+      "entries": [
+        {
+          "type": "item",
+          "name": "minecraft:diamond",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 3
+              }
+            }
+          ],
+          "weight": 15
+        },
+        {
+          "type": "item",
+          "name": "minecraft:iron_ingot",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 5
+              }
+            }
+          ],
+          "weight": 50
+        },
+        {
+          "type": "item",
+          "name": "minecraft:gold_ingot",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 2,
+                "max": 7
+              }
+            }
+          ],
+          "weight": 75
+        },
+        {
+          "type": "item",
+          "name": "minecraft:emerald",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 3
+              }
+            }
+          ],
+          "weight": 10
+        },
+        {
+          "type": "item",
+          "name": "minecraft:bone",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 4,
+                "max": 6
+              }
+            }
+          ],
+          "weight": 100
+        },
+        {
+          "type": "item",
+          "name": "minecraft:rotten_flesh",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 3,
+                "max": 7
+              }
+            }
+          ],
+          "weight": 80
+        },
+        {
+          "type": "item",
+          "name": "minecraft:bamboo",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 3
+              }
+            }
+          ],
+          "weight": 75
+        },
+        {
+          "type": "item",
+          "name": "minecraft:saddle",
+          "weight": 15
+        },
+        {
+          "type": "item",
+          "name": "minecraft:horsearmoriron",
+          "weight": 5
+        },
+        {
+          "type": "item",
+          "name": "minecraft:horsearmorgold",
+          "weight": 5
+        },
+        {
+          "type": "item",
+          "name": "minecraft:horsearmordiamond",
+          "weight": 5
+        },
+        {
+          "type": "item",
+          "name": "minecraft:book",
+          "weight": 6,
+          "functions": [
+            {
+              "function": "enchant_with_levels",
+              "levels": 30,
+              "treasure": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "empty",
+          "weight": 2
+        },
+        {
+          "type": "item",
+          "name": "minecraft:wild_armor_trim_smithing_template",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "empty",
+          "weight": 2
+        },
+        {
+          "type": "item",
+          "name": "dorios:venom_gauntlet",
+          "weight": 50
+        },
+        {
+          "type": "item",
+          "name": "dorios:venom_quiver",
+          "weight": 30
+        },
+        {
+          "type": "item",
+          "name": "dorios:venom_claw",
+          "weight": 20
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "empty",
+          "weight": 80
+        },
+        {
+          "type": "item",
+          "name": "dorios:idle_bloom",
+          "weight": 20
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "empty",
+          "weight": 50
+        },
+        {
+          "type": "item",
+          "name": "dorios:strong_jade_ring",
+          "weight": 50
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "dorios:warden_heart"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"H": {
+				"item": "dorios:soul_heart"
+			},
+			"E": {
+				"item": "echo_shard"
+			},
+			"G": {
+				"item": "diamond_block"
+			},
+			"D": {
+				"item": "sculk_catalyst"
+			}
+		},
+		"pattern": [
+			"EDE",
+			"GHG",
+			"EGE"
+		],
+		"result": {
+			"item": "dorios:warden_heart"
+		},
+		"unlock": [
+			{
+				"item": "dorios:soul_heart"
+			}
+		]
+	}
+}

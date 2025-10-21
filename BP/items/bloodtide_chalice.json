@@ -1,0 +1,15 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:item": {
+		"description": {
+			"identifier": "dorios:bloodtide_chalice",
+			"menu_category": {
+				"category": "equipment"
+			}
+		},
+		"components": {
+			"minecraft:icon": "dorios_bloodtide_chalice",
+			"minecraft:max_stack_size": 1
+		}
+	}
+}

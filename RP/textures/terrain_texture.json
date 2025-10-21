@@ -1,0 +1,23 @@
+{
+	"num_mip_levels": 4,
+	"padding": 8,
+	"resource_pack_name": "Pruebas",
+	"texture_name": "atlas.terrain",
+	"texture_data": {
+		"dorios_lava_solid_0": {
+			"textures": "textures/blocks/lava_solid_0"
+		},
+		"dorios_lava_solid_1": {
+			"textures": "textures/blocks/lava_solid_1"
+		},
+		"dorios_lava_solid_2": {
+			"textures": "textures/blocks/lava_solid_2"
+		},
+		"dorios_sunken_relic_crate": {
+			"textures": "textures/blocks/ocean_crate"
+		},
+		"dorios_blazed_crate": {
+			"textures": "textures/blocks/blazed_crate"
+		}
+	}
+}

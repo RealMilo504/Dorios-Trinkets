@@ -1,0 +1,15 @@
+{
+	"format_version": "1.21.10",
+	"minecraft:item": {
+		"description": {
+			"identifier": "dorios:miner_ring",
+			"menu_category": {
+				"category": "equipment"
+			}
+		},
+		"components": {
+			"minecraft:icon": "dorios_miner_ring",
+			"minecraft:max_stack_size": 1
+		}
+	}
+}

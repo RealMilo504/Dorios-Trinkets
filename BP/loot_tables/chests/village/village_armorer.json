@@ -1,0 +1,146 @@
+{
+  "pools": [
+        {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "weight": 8,
+          "name": "arena:chorus_heart"
+        },
+        {
+          "type": "item",
+          "weight": 8,
+          "name": "arena:fast_clock"
+        },
+        {
+          "type": "item",
+          "weight": 8,
+          "name": "arena:blindfold"
+        },
+        {
+          "type": "item",
+          "weight": 8,
+          "name": "arena:bonnet"
+        },
+        {
+          "type": "item",
+          "weight": 8,
+          "name": "arena:adhesive_bandage"
+        },
+        {
+          "type": "item",
+          "weight": 8,
+          "name": "arena:shackle"
+        },
+        {
+          "type": "item",
+          "weight": 2,
+          "name": "arena:jellyfish_necklace"
+        },
+        {
+          "type": "item",
+          "weight": 8,
+          "name": "arena:bezoar"
+        },
+        {
+          "type": "item",
+          "weight": 8,
+          "name": "arena:vitamins"
+        },
+        {
+          "type": "item",
+          "weight": 8,
+          "name": "arena:forbidden_fruit"
+        },
+        {
+          "type": "item",
+          "weight": 8,
+          "name": "arena:phantom_eye"
+        },
+        {
+          "type": "item",
+          "weight": 4,
+          "name": "arena:discount_card"
+        },
+        {
+          "type": "item",
+          "weight": 8,
+          "name": "arena:bonnet"
+        },
+        {
+          "type": "empty",
+          "weight": 14
+            }
+          ]
+        },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "arena:steadfast_spikes",
+          "weight": 1
+        },
+        {
+          "type": "item",
+          "name": "arena:running_shoes",
+          "weight": 1
+        },
+        {
+          "type": "item",
+          "name": "arena:vampic_glove",
+          "weight": 1
+        },
+        {
+          "type": "empty",
+          "weight": 7
+        }
+      ]
+    },
+    {
+      "rolls": {
+        "min": 1,
+        "max": 5
+      },
+      "entries": [
+        {
+          "type": "item",
+          "weight": 2,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 3
+              }
+            }
+          ],
+          "name": "minecraft:iron_ingot"
+        },
+        {
+          "type": "item",
+          "weight": 4,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 4
+              }
+            }
+          ],
+          "name": "minecraft:bread"
+        },
+        {
+          "type": "item",
+          "name": "minecraft:iron_helmet"
+        },
+        {
+          "type": "item",
+          "name": "minecraft:emerald"
+        }
+      ]
+    }
+  ]
+}

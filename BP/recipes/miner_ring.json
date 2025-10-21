@@ -1,0 +1,41 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "dorios:miner_ring"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"R": {
+				"item": "dorios:empty_ring"
+			},
+			"C": {
+				"item": "glowstone_dust"
+			},
+			"G": {
+				"item": "gold_block"
+			},
+			"P": {
+				"item": "redstone_block"
+			},
+			"D": {
+				"item": "golden_pickaxe"
+			}
+		},
+		"pattern": [
+			"PDP",
+			"GRG",
+			"CGC"
+		],
+		"result": {
+			"item": "dorios:miner_ring"
+		},
+		"unlock": [
+			{
+				"item": "dorios:empty_ring"
+			}
+		]
+	}
+}

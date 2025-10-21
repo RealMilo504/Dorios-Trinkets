@@ -1,0 +1,46 @@
+{
+	"type": "minecraftBedrock",
+	"name": "Dorios' Trinkets",
+	"namespace": "twm",
+	"authors": [
+		"Dorios Studios"
+	],
+	"targetVersion": "1.21.50",
+	"description": "beta ",
+	"experimentalGameplay": {
+		"creationOfCustomBiomes": false,
+		"upcomingCreatorFeatures": false,
+		"enableGameTestFramework": true,
+		"focusTargetCamera": false,
+		"dataDrivenJigsawStructures": false,
+		"aimAssist": false,
+		"educationEdition": false
+	},
+	"bdsProject": true,
+	"packs": {
+		"behaviorPack": "./BP",
+		"resourcePack": "./RP"
+	},
+	"worlds": [
+		"./worlds/*"
+	],
+	"compiler": {
+		"plugins": [
+			"generatorScripts",
+			"typeScript",
+			"entityIdentifierAlias",
+			"customEntityComponents",
+			"customItemComponents",
+			"customBlockComponents",
+			"customCommands",
+			"moLang",
+			"formatVersionCorrection",
+			[
+				"simpleRewrite",
+				{
+					"packName": "Dorios' Trinkets"
+				}
+			]
+		]
+	}
+}

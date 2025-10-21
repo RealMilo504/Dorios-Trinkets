@@ -1,0 +1,15 @@
+{
+	"format_version": "1.21.10",
+	"minecraft:item": {
+		"description": {
+			"identifier": "dorios:repair_talis",
+			"menu_category": {
+				"category": "equipment"
+			}
+		},
+		"components": {
+			"minecraft:icon": "dorios_repair_talisman",
+			"minecraft:max_stack_size": 1
+		}
+	}
+}
