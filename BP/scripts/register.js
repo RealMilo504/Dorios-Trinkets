@@ -693,7 +693,6 @@ const trinkets = {
             }
         },
         "dorios:abyssal_essence_tag": { // Tag of Abyssal Essence, gives effects when underwater
-            trinket: "archaiccharm",
             passives: {
                 strength: 1
             }
@@ -1100,7 +1099,6 @@ const trinkets = {
             }
         },
         "dorios:strong_celestial_ring_tag": { // Gives effect when sneaking
-            trinket: "witherring",
             passives: {
                 slow_falling: 1
             }
@@ -1285,7 +1283,6 @@ const trinkets = {
             }
         },
         "dorios:abyssal_sun_amulet_tag": {
-            trinket: "amulet",
             passives: {
                 regeneration: 1
             }
@@ -1512,7 +1509,6 @@ const trinkets = {
             }
         },
         "dorios:rush_of_fear_tag": {
-            trinket: "necklace",
             stats: {
                 speed: 100
             }

@@ -48,7 +48,7 @@ function manaDisplay(manaScore, player, stats) {
     let scoreId = player.scoreboardIdentity
     if (scoreId != undefined) {
         let mana = manaScore.getScore(scoreId);
-        if (mana < 0 || mana == NaN || mana == undefined) mana = 0
+        if (mana < 0 || Number.isNaN(mana) || mana == undefined) mana = 0
         const maxMana = stats.mana;
         const regen = Math.min(stats.manaRegen / 5, maxMana - mana)
         mana += regen
