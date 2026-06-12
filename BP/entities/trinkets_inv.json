@@ -50,6 +50,11 @@
 					},
 					"event": "despawn"
 				}
+			},
+			"minecraft:type_family": {
+				"family": [
+					"inanimate"
+				]
 			}
 		},
 		"events": {
