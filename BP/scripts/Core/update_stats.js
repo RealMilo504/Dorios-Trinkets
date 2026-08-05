@@ -8,6 +8,12 @@ const intervalMap = new Map();
 
 world.afterEvents.playerSpawn.subscribe(e => { updateData(e.player); });
 world.afterEvents.playerHotbarSelectedSlotChange.subscribe(e => updatePlayerStats(e.player))
+world.afterEvents.playerLeave.subscribe(({ playerId }) => {
+    const interval = intervalMap.get(playerId);
+    if (interval !== undefined) system.clearRun(interval);
+    intervalMap.delete(playerId);
+    previousEquipmentMap.delete(playerId);
+});
 
 world.afterEvents.worldLoad.subscribe(() => {
     system.runTimeout(() => {
@@ -76,7 +82,12 @@ function updateData(player) {
 
     const interval = system.runInterval(() => {
         // Ensure player is still valid
-        if (!player.isValid) return
+        if (!player.isValid) {
+            system.clearRun(interval);
+            intervalMap.delete(id);
+            previousEquipmentMap.delete(id);
+            return
+        }
         // world.sendMessage(`${player.dimension.getBiome(player.location).id}`)
         // Trinket updates and extra jump logic
         trinketTick(player);

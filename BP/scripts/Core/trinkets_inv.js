@@ -1,6 +1,20 @@
 import { system, ItemStack, world } from "@minecraft/server";
+import {
+  isPlayerTracking,
+  startPlayerTracking,
+  stopPlayerTracking,
+} from "../DoriosLib/entity/index.js";
 import { data, slots } from "./config.js";
 import { getStatCategory, displayStats } from "./stats_manager.js";
+
+const trinketEntities = new Map();
+
+const TRACKING_OPTIONS = Object.freeze({
+  anchor: "head",
+  viewOffset: 0.5,
+  velocityFactor: 5,
+  offset: { x: 0, y: -0.5, z: 0 },
+});
 
 function isAuxiliaryTag(tag) {
   return tag.endsWith("_tag");
@@ -12,11 +26,19 @@ world.afterEvents.itemUse.subscribe((e) => {
   tryEquipTrinket(e.source, e.itemStack);
 });
 
+world.afterEvents.playerLeave.subscribe(({ playerId }) => {
+  const entity = trinketEntities.get(playerId);
+  if (!entity) return;
+
+  stopPlayerTracking(entity);
+  trinketEntities.delete(playerId);
+  if (entity.isValid) entity.remove();
+});
+
 export function trinketTick(player) {
   let mainHand = player.getEquipment("Mainhand");
   if (!mainHand || mainHand?.typeId != "dorios:scroll") {
-    const entity = getInvEntity(player);
-    if (entity) entity.remove();
+    removeInvEntity(player);
     return;
   } else {
     // Lock Scroll in Mainhand
@@ -32,28 +54,11 @@ export function trinketTick(player) {
       }
     }, 1);
 
-    const trinketInv = getInvEntity(player);
-    if (!trinketInv) {
-      summonInvEntity(player);
-      return;
-    }
+    const trinketInv = getOrCreateInvEntity(player);
     if (!trinketInv.getTags().includes("dorios:trinket_loaded")) {
       loadEntityInv(player, trinketInv);
       trinketInv.addTag("dorios:trinket_loaded");
     }
-    const headPos = player.getHeadLocation();
-    const viewDir = player.getViewDirection();
-    const velocity = player.getVelocity();
-
-    // Puedes ajustar este multiplicador según la frecuencia de actualización
-    const predictionFactor = 5; // cuánto adelantarte con base en su velocidad
-
-    const x = headPos.x + viewDir.x * 0.5 + velocity.x * predictionFactor;
-    const y = headPos.y + viewDir.y * 0.5 + velocity.y * predictionFactor;
-    const z = headPos.z + viewDir.z * 0.5 + velocity.z * predictionFactor;
-
-    trinketInv.teleport({ x, y, z }, { dimension: player.dimension });
-
     validateTrinketSlots(player, trinketInv);
   }
 }
@@ -156,17 +161,49 @@ function validateTrinketSlots(player, entity) {
 }
 
 function summonInvEntity(player) {
-  let entity = player.dimension.spawnEntity("dorios:trinkets_inv", player.location);
+  const entity = player.dimension.spawnEntity("dorios:trinkets_inv", player.location);
   entity.addTag(`${player.id}`);
   entity.getComponent("minecraft:tameable").tame(player);
   entity.nameTag = "Dorios Trinkets";
+  return trackInvEntity(player, entity);
 }
 
-function getInvEntity(player) {
-  return player.dimension.getEntities({
+function getOrCreateInvEntity(player) {
+  const cached = trinketEntities.get(player.id);
+  if (cached?.isValid) {
+    if (!isPlayerTracking(cached)) startPlayerTracking(cached, player, TRACKING_OPTIONS);
+    return cached;
+  }
+
+  if (cached) stopPlayerTracking(cached);
+  trinketEntities.delete(player.id);
+  const existing = player.dimension.getEntities({
     tags: [player.id],
     type: "dorios:trinkets_inv",
   })[0];
+  return existing ? trackInvEntity(player, existing) : summonInvEntity(player);
+}
+
+function trackInvEntity(player, entity) {
+  trinketEntities.set(player.id, entity);
+  startPlayerTracking(entity, player, TRACKING_OPTIONS);
+  return entity;
+}
+
+function removeInvEntity(player) {
+  const cached = trinketEntities.get(player.id);
+  const entity = cached?.isValid
+    ? cached
+    : player.dimension.getEntities({
+      tags: [player.id],
+      type: "dorios:trinkets_inv",
+    })[0];
+
+  trinketEntities.delete(player.id);
+  if (cached && cached !== entity) stopPlayerTracking(cached);
+  if (!entity) return;
+  stopPlayerTracking(entity);
+  if (entity.isValid) entity.remove();
 }
 
 function tryEquipTrinket(player, item) {
