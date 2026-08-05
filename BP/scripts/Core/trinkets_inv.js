@@ -1,5 +1,7 @@
 import { system, ItemStack, world } from "@minecraft/server";
 import {
+  changeItemAmount,
+  getEquipment,
   isPlayerTracking,
   startPlayerTracking,
   stopPlayerTracking,
@@ -36,7 +38,7 @@ world.afterEvents.playerLeave.subscribe(({ playerId }) => {
 });
 
 export function trinketTick(player) {
-  let mainHand = player.getEquipment("Mainhand");
+  let mainHand = getEquipment(player, "Mainhand");
   if (!mainHand || mainHand?.typeId != "dorios:scroll") {
     removeInvEntity(player);
     return;
@@ -45,7 +47,7 @@ export function trinketTick(player) {
     const mainHandSlot = player.selectedSlotIndex;
 
     system.runTimeout(() => {
-      if (player.getEquipment("Mainhand")?.typeId == mainHand?.typeId) {
+      if (getEquipment(player, "Mainhand")?.typeId == mainHand?.typeId) {
         mainHand.lockMode = "slot";
         player.getComponent("inventory").container.setItem(mainHandSlot, mainHand);
       } else {
@@ -241,7 +243,10 @@ function tryEquipTrinket(player, item) {
   // Todo ok, se equipa
   player.addTag(id);
   clearTrinketImmuneEffects(player, entry);
-  player.changeItemAmount(player.selectedSlotIndex, -1);
+  changeItemAmount(player, {
+    slot: player.selectedSlotIndex,
+    amount: -1,
+  });
 }
 
 /**

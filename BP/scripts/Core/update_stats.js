@@ -2,6 +2,7 @@ import { system, world, ItemStack } from '@minecraft/server'
 import { updatePlayerStats, getStatCategory } from './stats_manager.js'
 import { trinketTick } from './trinkets_inv.js'
 import { manaBarFrames } from './config.js'
+import { getEquipment } from '../DoriosLib/entity/index.js'
 
 const previousEquipmentMap = new Map();
 const intervalMap = new Map();
@@ -40,9 +41,8 @@ world.beforeEvents.effectAdd.subscribe(e => {
  * Converts equipment and tags into a single string for comparison.
  */
 function equipmentAndTagsString(player) {
-    const equipment = player.getEquipment();
     const equipmentStr = ['Head', 'Chest', 'Legs', 'Feet', 'Mainhand', 'Offhand']
-        .map(slot => equipment?.[slot]?.typeId ?? 'none')
+        .map(slot => getEquipment(player, slot)?.typeId ?? 'none')
         .join('|');
 
     const tagsStr = player.getTags().join('|');
@@ -114,7 +114,6 @@ function updateData(player) {
 
         //         // Health regeneration
         //         if (stats.healthRegen > 0) {
-        //             doriosAPI.entities.changeHealth(player, stats.healthRegen / 5);
         //         }
         //     }
         // }

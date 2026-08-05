@@ -3,6 +3,7 @@ import { displayStats } from './stats_manager.js'
 import { clearGlobalImmuneEffects } from './trinkets_inv.js'
 import { ChestLootInjector, MobLootInjector } from './loot_injector.js'
 import { world, system } from "@minecraft/server";
+import { printJson } from '../DoriosLib/messages/index.js'
 
 export let data = {};
 
@@ -156,7 +157,7 @@ export const scriptEventsHandler = {
         clearGlobalImmuneEffects(e.sourceEntity)
     },
     "dorios:print_data": e => {
-        DoriosAPI.utils.printJSON(e.sourceEntity, 'Data', data)
+        printJson(e.sourceEntity, 'Data', data)
     },
     "dorios:display_stats": e => {
         displayStats(e.sourceEntity)

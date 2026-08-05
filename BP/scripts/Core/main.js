@@ -1,4 +1,4 @@
-import './DoriosAPI/index.js'
+import '../DoriosLib/index.js'
 
 import './stats_manager.js'
 import './update_stats.js'
