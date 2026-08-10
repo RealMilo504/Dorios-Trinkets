@@ -80,7 +80,7 @@ export const statTexts = {
 
     formats: {
         // Individual stat formatters
-        health: value => `§7- Max Health: §f${value / 2}`,
+        health: value => `§7- Max Health: §f${value / 2}`,
         mana: value => `§7- Max Mana: §f${value}`,
         attack: value => `§7- Bonus Damage: §f${value}`,
         attackMulti: value => `§7- Attack Multiplier: §f${value}%%`,
