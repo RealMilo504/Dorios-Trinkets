@@ -1,3 +1,18 @@
+dorios:itemGroup.name.rings=Rings
+dorios:itemGroup.name.heavy_rings=Heavy Rings
+dorios:itemGroup.name.strong_rings=Strong Rings
+dorios:itemGroup.name.hearty_charms=Hearty Charms
+dorios:itemGroup.name.abyssal_trinkets=Abyssal Trinkets
+dorios:itemGroup.name.gauntlets_and_claws=Gauntlets and Claws
+dorios:itemGroup.name.quivers=Quivers
+dorios:itemGroup.name.tideforged_trinkets=Tideforged Trinkets
+dorios:itemGroup.name.bloodbound_trinkets=Bloodbound Trinkets
+dorios:itemGroup.name.head_trinkets=Head Trinkets
+dorios:itemGroup.name.movement_trinkets=Movement Trinkets
+dorios:itemGroup.name.relics=Relics
+dorios:itemGroup.name.ring_bases=Ring Bases
+dorios:itemGroup.name.scrolls=Scrolls
+
 item.dorios:trinket_manager=Loadout \nEquip or Remove your trinkets with this
 item.dorios:scroll=Scroll \nEquip or Remove your trinkets with this
 item.dorios:empty_ring=Empty Ring \nCrafting material

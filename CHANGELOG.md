@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.1.2
+
+### ADDED
+
+- Added a localized item catalog that organizes every visible trinket, ring base, and scroll into menu groups.
+
 ## 2.1.1
 
 ### FIXED

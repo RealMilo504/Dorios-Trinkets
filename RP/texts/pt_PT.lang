@@ -1,3 +1,18 @@
+dorios:itemGroup.name.rings=Anéis
+dorios:itemGroup.name.heavy_rings=Anéis pesados
+dorios:itemGroup.name.strong_rings=Anéis fortes
+dorios:itemGroup.name.hearty_charms=Amuletos de saúde
+dorios:itemGroup.name.abyssal_trinkets=Artefactos abissais
+dorios:itemGroup.name.gauntlets_and_claws=Luvas e garras
+dorios:itemGroup.name.quivers=Aljavas
+dorios:itemGroup.name.tideforged_trinkets=Artefactos forjados pela maré
+dorios:itemGroup.name.bloodbound_trinkets=Artefactos de sangue
+dorios:itemGroup.name.head_trinkets=Acessórios de cabeça
+dorios:itemGroup.name.movement_trinkets=Acessórios de movimento
+dorios:itemGroup.name.relics=Relíquias
+dorios:itemGroup.name.ring_bases=Bases de anel
+dorios:itemGroup.name.scrolls=Pergaminhos
+
 item.dorios:trinket_manager=Loadout \nEquipa ou retira teus amuletos com isso
 item.dorios:scroll=Pergaminho \nEquipa ou retira teus amuletos com isso
 item.dorios:empty_ring=Anel Vazio \nMaterial de criação
