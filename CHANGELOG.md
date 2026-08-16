@@ -10,6 +10,10 @@ This update improves how trinkets, ring bases and scrolls are organized in the c
 
 - Added a localized item catalog that organizes every visible trinket, ring base, and scroll into menu groups.
 
+## CHANGED
+
+- Synchronized the visible pack version metadata with v2.1.2.
+
 ---
 
 # Dorios' Trinkets v2.1.1

@@ -8,7 +8,7 @@
 	},
 	"header": {
 		"name": "Dorios' Trinkets",
-		"description": "Version 1.2.0 §6Dorios Studios\n§fArt by §dArena, §5Temu Ware §f& §4@bragagalvan_",
+		"description": "Version v2.1.2 §6Dorios Studios\n§fArt by §dArena, §5Temu Ware §f& §4@bragagalvan_",
 		"min_engine_version": [
 			1,
 			21,
@@ -18,7 +18,7 @@
 		"version": [
 			2,
 			1,
-			1
+			2
 		]
 	},
 	"modules": [
@@ -38,7 +38,7 @@
 			"version": [
 				2,
 				1,
-				1
+				2
 			]
 		}
 	]
