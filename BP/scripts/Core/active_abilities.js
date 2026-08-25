@@ -1,6 +1,6 @@
-import { system, world } from '@minecraft/server'
+import { world } from '@minecraft/server'
 import { getStatCategory } from './stats_manager.js'
-import { manaBarFrames } from './config.js'
+import { publishManaHud } from './mana_hud.js'
 import { addHealth } from '../DoriosLib/entity/index.js'
 
 
@@ -25,19 +25,16 @@ const activesEffectHandlers = {
         addHealth(attacker, lifeStealValue)
     },
     manaSteal: (_entity, value, attacker, stats) => {
-        let manaScore = world.scoreboard.getObjective('dorios:mana');
-        let mana = manaScore.getScore(attacker.scoreboardIdentity) || 0;
+        const manaScore = world.scoreboard.getObjective('dorios:mana');
+        const identity = attacker.scoreboardIdentity
+        if (!manaScore || !identity) return
+
+        let mana = manaScore.getScore(identity) || 0;
         const maxMana = stats.mana;
         const regen = Math.min((value / 100) * maxMana, maxMana - mana)
         mana += regen
-        manaScore.setScore(attacker.scoreboardIdentity, mana);
-
-        const percentage = mana / maxMana;
-        const frameIndex = Math.floor(percentage * (manaBarFrames.length - 1));
-        const bar = manaBarFrames[frameIndex];
-        if (attacker.getGameMode() != 'creative') {
-            attacker.onScreenDisplay.setActionBar(`                         ${bar}`);
-        }
+        manaScore.setScore(identity, mana);
+        publishManaHud(attacker, stats, mana)
     }
 };
 
