@@ -1,7 +1,7 @@
-import { system, world } from '@minecraft/server'
+import { system, world, ItemStack } from '@minecraft/server'
 import { updatePlayerStats, getStatCategory } from './stats_manager.js'
 import { trinketTick } from './trinkets_inv.js'
-import { forgetManaHudPlayer, publishManaHud } from './mana_hud.js'
+import { manaBarFrames } from './config.js'
 import { getEquipment } from '../DoriosLib/entity/index.js'
 
 const previousEquipmentMap = new Map();
@@ -14,7 +14,6 @@ world.afterEvents.playerLeave.subscribe(({ playerId }) => {
     if (interval !== undefined) system.clearRun(interval);
     intervalMap.delete(playerId);
     previousEquipmentMap.delete(playerId);
-    forgetManaHudPlayer(playerId);
 });
 
 world.afterEvents.worldLoad.subscribe(() => {
@@ -51,6 +50,29 @@ function equipmentAndTagsString(player) {
     return `${equipmentStr}:${tagsStr}`;
 }
 
+function manaDisplay(manaScore, player, stats) {
+    let scoreId = player.scoreboardIdentity
+    if (scoreId != undefined) {
+        let mana = manaScore.getScore(scoreId);
+        if (mana < 0 || Number.isNaN(mana) || mana == undefined) mana = 0
+        const maxMana = stats.mana;
+        const regen = Math.min(stats.manaRegen / 5, maxMana - mana)
+        mana += regen
+        manaScore.setScore(scoreId, mana || 0);
+        const percentage = mana / maxMana;
+        const frameIndex = Math.floor(percentage * (manaBarFrames.length - 1));
+        const bar = manaBarFrames[frameIndex];
+        try {
+            if (player.getGameMode() == 'Survival') {
+                player.onScreenDisplay.setActionBar(`                         ${bar}`);
+            }
+        } catch { return false }
+    } else {
+        player.runCommand('scoreboard players add @s dorios:mana 100')
+        world.getDimension('overworld').runCommand('scoreboard objectives add dorios:mana dummy Mana')
+    }
+}
+
 function updateData(player) {
     const id = player.id;
     if (intervalMap.has(id)) return
@@ -83,8 +105,18 @@ function updateData(player) {
 
         const stats = getStatCategory(player, 'stats');
 
-        // Keep optional HUD consumers current without creating another scheduler.
-        if (tick % 4 === 0) publishManaHud(player, stats);
+
+        // Mana display and refill every 4 ticks (up to 5 times)
+        // if (tick % 4 == 0) {
+        //     if (stats) {
+        //         const manaScore = world.scoreboard.getObjective('dorios:mana');
+        //         manaDisplay(manaScore, player, stats);
+
+        //         // Health regeneration
+        //         if (stats.healthRegen > 0) {
+        //         }
+        //     }
+        // }
 
 
         if (stats?.extraJumps > 0) {
