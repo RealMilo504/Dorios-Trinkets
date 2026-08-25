@@ -13,7 +13,7 @@ export const vanillaStats = [
     ["lavaSpeed", "lava_movement", 0.01]
 ]
 export const vanillaEventStats = ["health", "knockbackRes", "damageReduction"]
-export const manaBarFrames = ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''];
+export { manaBarFrames } from './mana_frames.js'
 
 export const slots = {
     head: 0,
