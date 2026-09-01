@@ -1,0 +1,30 @@
+{
+  "format_version": "1.20.80",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "dorios:chronoshard"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "ingredients": [
+      {
+        "item": "minecraft:clock"
+      },
+      {
+        "item": "minecraft:amethyst_shard"
+      },
+      {
+        "item": "minecraft:echo_shard"
+      }
+    ],
+    "result": {
+      "item": "dorios:chronoshard"
+    },
+    "unlock": [
+      {
+        "item": "minecraft:clock"
+      }
+    ]
+  }
+}

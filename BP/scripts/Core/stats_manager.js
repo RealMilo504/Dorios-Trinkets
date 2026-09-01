@@ -2,6 +2,14 @@ import { system, world } from '@minecraft/server'
 import { ActionFormData } from '@minecraft/server-ui'
 import { data, statsConfig, statTexts, vanillaStats, vanillaEventStats, scriptEventsHandler } from './config.js'
 
+const STAT_CATEGORIES = Object.freeze(["stats", "passives", "actives", "immunities"]);
+const STAT_CATEGORY_SET = new Set(STAT_CATEGORIES);
+const playerStatsCache = new Map();
+
+world.afterEvents.playerLeave.subscribe(({ playerId }) => {
+    playerStatsCache.delete(playerId);
+});
+
 system.afterEvents.scriptEventReceive.subscribe((e) => {
     const event = scriptEventsHandler[e.id]
     if (event) event(e)
@@ -56,6 +64,7 @@ function applyVanillaStatsViaEvents(player, stats) {
  * @param {Object} playerData Object containing stats, passives, actives, and immunities.
  */
 function saveStatsToProperties(player, playerData) {
+    playerStatsCache.set(player.id, playerData);
     player.setDynamicProperty("dorios:playerData.stats", JSON.stringify(playerData.stats));
     player.setDynamicProperty("dorios:playerData.passives", JSON.stringify(playerData.passives));
     player.setDynamicProperty("dorios:playerData.actives", JSON.stringify(playerData.actives));
@@ -70,11 +79,35 @@ function saveStatsToProperties(player, playerData) {
  * @returns {Object} The parsed stat category, or empty object if not found.
  */
 export function getStatCategory(player, category) {
-    const valid = ["stats", "passives", "actives", "immunities"];
-    if (!valid.includes(category)) return {};
+    if (!STAT_CATEGORY_SET.has(category)) return {};
 
+    let cached = playerStatsCache.get(player.id);
+    if (!cached) {
+        cached = {};
+        playerStatsCache.set(player.id, cached);
+    }
+
+    if (Object.prototype.hasOwnProperty.call(cached, category)) {
+        return cached[category];
+    }
+
+    const fallback = category === "immunities" ? [] : {};
     const raw = player.getDynamicProperty(`dorios:playerData.${category}`);
-    return raw ? JSON.parse(raw) : {};
+    let value = fallback;
+    if (raw) {
+        try {
+            const parsed = JSON.parse(raw);
+            const valid = category === "immunities"
+                ? Array.isArray(parsed)
+                : parsed && typeof parsed === "object" && !Array.isArray(parsed);
+            if (valid) value = parsed;
+        } catch {
+            // Cache the fallback so corrupted legacy data cannot be reparsed
+            // and logged on every combat hit through the StatsCore bridge.
+        }
+    }
+    cached[category] = value;
+    return value;
 }
 
 /**
@@ -89,17 +122,24 @@ export function getStatCategory(player, category) {
  * }}
  */
 export function getAllStats(player) {
-    const get = (key) => {
-        const raw = player.getDynamicProperty(`dorios:playerData.${key}`);
-        return raw ? JSON.parse(raw) : {};
-    };
-
     return {
-        stats: get("stats"),
-        passives: get("passives"),
-        actives: get("actives"),
-        immunities: get("immunities")
+        stats: getStatCategory(player, "stats"),
+        passives: getStatCategory(player, "passives"),
+        actives: getStatCategory(player, "actives"),
+        immunities: getStatCategory(player, "immunities")
     };
+}
+
+/**
+ * Invalidates cached persisted stats so the next read reloads dynamic properties.
+ * Use this only when another system writes the properties without calling
+ * updatePlayerStats.
+ *
+ * @param {import('@minecraft/server').Player|string} playerOrId
+ */
+export function invalidatePlayerStatsCache(playerOrId) {
+    const playerId = typeof playerOrId === "string" ? playerOrId : playerOrId?.id;
+    if (playerId) playerStatsCache.delete(playerId);
 }
 
 
@@ -115,19 +155,39 @@ function calculateAllStats(entity) {
     const passives = {};
     const actives = {};
     const immunitiesSet = new Set(); // use Set to avoid duplicates
-    const equippedTypeIds = [...entity.getTags()];
+    const equippedTypeIds = entity.getTags();
+
+    // Initialize defaults once, then aggregate each equipped entry in one pass.
+    for (const statName in statsConfig) {
+        stats[statName] = statsConfig[statName].default;
+    }
+
+    for (const typeId of equippedTypeIds) {
+        const entry = data[typeId];
+        if (!entry) continue;
+
+        for (const [statName, value] of Object.entries(entry.stats ?? {})) {
+            if (statsConfig[statName] && typeof value === "number") {
+                stats[statName] += value;
+            }
+        }
+
+        for (const [effect, level] of Object.entries(entry.passives ?? {})) {
+            passives[effect] = (passives[effect] ?? 0) + level;
+        }
+
+        for (const [effect, level] of Object.entries(entry.actives ?? {})) {
+            actives[effect] = (actives[effect] ?? 0) + level;
+        }
+
+        if (Array.isArray(entry.immunities)) {
+            for (const effect of entry.immunities) immunitiesSet.add(effect);
+        }
+    }
 
     for (const statName in statsConfig) {
-        const { default: base, min, max, scale } = statsConfig[statName];
-        let total = base + (stats[statName] ?? 0);
-
-        equippedTypeIds.forEach(typeId => {
-            const itemStats = data[typeId]?.stats;
-            if (itemStats?.[statName] !== undefined) {
-                total += itemStats[statName];
-            }
-        });
-
+        const { min, max, scale } = statsConfig[statName];
+        let total = stats[statName];
         if (min !== undefined && max !== undefined) {
             total = Math.min(Math.max(total, min), max);
         }
@@ -138,29 +198,6 @@ function calculateAllStats(entity) {
 
         stats[statName] = total;
     }
-
-    // Effects: passives and actives (additive)
-    const effects = ["passives", "actives"]
-    effects.forEach(key => {
-        equippedTypeIds.forEach(typeId => {
-            const effects = data[typeId]?.[key];
-            if (!effects) return;
-
-            const storage = key === "passives" ? passives : actives;
-
-            for (const effect in effects) {
-                storage[effect] = (storage[effect] ?? 0) + effects[effect];
-            }
-        });
-    });
-
-    // Immunities (array merge)
-    equippedTypeIds.forEach(typeId => {
-        const immunityList = data[typeId]?.immunities;
-        if (Array.isArray(immunityList)) {
-            immunityList.forEach(effect => immunitiesSet.add(effect));
-        }
-    });
 
     // Conflict resolution for passives and actives
     const conflicting = [
@@ -266,6 +303,7 @@ export function displayStats(player) {
     const form = new ActionFormData()
         .title('§6§lAll Stats:')
         .body(text)
+        .button('§cClose')
     form.show(player)
 }
 

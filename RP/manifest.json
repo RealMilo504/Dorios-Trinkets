@@ -8,7 +8,7 @@
 	},
 	"header": {
 		"name": "Dorios' Trinkets",
-		"description": "Version v2.1.2 §6Dorios Studios\n§fArt by §dArena, §5Temu Ware §f& §4@bragagalvan_",
+		"description": "Version v2.2.0 §6Dorios Studios\n§fArt by §dArena, §5Temu Ware §f& §4@bragagalvan_",
 		"min_engine_version": [
 			1,
 			21,
@@ -17,8 +17,8 @@
 		"uuid": "2b7e4961-39bb-47ca-a06d-aa03dd15c007",
 		"version": [
 			2,
-			1,
-			2
+			2,
+			0
 		]
 	},
 	"modules": [
@@ -27,7 +27,7 @@
 			"uuid": "8950c808-410c-4481-b23f-da6e25d9b894",
 			"version": [
 				2,
-				0,
+				2,
 				0
 			]
 		}
@@ -37,8 +37,8 @@
 			"uuid": "36e708a5-830f-425f-bbda-3f7031fe5428",
 			"version": [
 				2,
-				1,
-				2
+				2,
+				0
 			]
 		}
 	]

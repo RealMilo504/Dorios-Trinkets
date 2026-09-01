@@ -1,0 +1,30 @@
+{
+  "format_version": "1.20.80",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "dorios:endless_eye"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "ingredients": [
+      {
+        "item": "minecraft:ender_eye"
+      },
+      {
+        "item": "minecraft:amethyst_shard"
+      },
+      {
+        "item": "minecraft:echo_shard"
+      }
+    ],
+    "result": {
+      "item": "dorios:endless_eye"
+    },
+    "unlock": [
+      {
+        "item": "minecraft:ender_eye"
+      }
+    ]
+  }
+}

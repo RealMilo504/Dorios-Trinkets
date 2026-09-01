@@ -1,0 +1,30 @@
+{
+  "format_version": "1.20.80",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "dorios:worldroot_knot"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "ingredients": [
+      {
+        "item": "minecraft:mangrove_roots"
+      },
+      {
+        "item": "minecraft:heart_of_the_sea"
+      },
+      {
+        "item": "minecraft:amethyst_shard"
+      }
+    ],
+    "result": {
+      "item": "dorios:worldroot_knot"
+    },
+    "unlock": [
+      {
+        "item": "minecraft:mangrove_roots"
+      }
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "format_version": "1.20.80",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "dorios:shadowstep_greaves"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "ingredients": [
+      {
+        "item": "minecraft:echo_shard"
+      },
+      {
+        "item": "minecraft:ender_pearl"
+      },
+      {
+        "item": "minecraft:leather_boots"
+      }
+    ],
+    "result": {
+      "item": "dorios:shadowstep_greaves"
+    },
+    "unlock": [
+      {
+        "item": "minecraft:echo_shard"
+      }
+    ]
+  }
+}

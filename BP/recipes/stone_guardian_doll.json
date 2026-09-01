@@ -1,0 +1,26 @@
+{
+  "format_version": "1.20.80",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "dorios:stone_guardian_doll"
+    },
+    "tags": ["crafting_table"],
+    "key": {
+      "C": { "item": "minecraft:cobblestone" },
+      "I": { "item": "minecraft:iron_ingot" },
+      "R": { "item": "minecraft:redstone" },
+      "S": { "item": "minecraft:string" }
+    },
+    "pattern": [
+      " S ",
+      "CIC",
+      "CRC"
+    ],
+    "result": {
+      "item": "dorios:stone_guardian_doll"
+    },
+    "unlock": [
+      { "item": "minecraft:iron_ingot" }
+    ]
+  }
+}

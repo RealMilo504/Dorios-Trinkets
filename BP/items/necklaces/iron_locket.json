@@ -1,0 +1,15 @@
+{
+  "format_version": "1.20.80",
+  "minecraft:item": {
+    "description": {
+      "identifier": "dorios:iron_locket",
+      "menu_category": {
+        "category": "equipment"
+      }
+    },
+    "components": {
+      "minecraft:icon": "dorios_iron_locket",
+      "minecraft:max_stack_size": 1
+    }
+  }
+}

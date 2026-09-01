@@ -1,9 +1,39 @@
 import { world, system, ItemStack, Block, Player, Entity } from "@minecraft/server";
 
+const LUCKY_RAGDOLL_ID = "dorios:lucky_ragdoll";
+const LUCKY_RAGDOLL_BONUS = 0.03;
+
+function payLuckyRagdollHunger(player) {
+    if (!player?.hasTag?.(LUCKY_RAGDOLL_ID)) return false;
+
+    try {
+        const hunger = player.getComponent("minecraft:player.hunger")
+            ?? player.getComponent("player.hunger");
+        const current = Number(hunger?.currentValue ?? hunger?.value ?? 0);
+        if (!hunger || current < 1) return false;
+
+        if (typeof hunger.setCurrentValue === "function") hunger.setCurrentValue(current - 1);
+        else hunger.currentValue = current - 1;
+        return true;
+    } catch {
+        return false;
+    }
+}
+
+function rollLootChance(chance, player) {
+    const baseChance = Math.max(0, Math.min(1, Number(chance) || 0));
+    const roll = Math.random();
+    if (roll <= baseChance) return true;
+    return roll <= Math.min(1, baseChance + LUCKY_RAGDOLL_BONUS)
+        && payLuckyRagdollHunger(player);
+}
+
 export class ChestLootInjector {
     static PLACED_CHESTS_KEY = "dorios:placed_chests";
     static OPENED_CHESTS_KEY = "dorios:opened_chests";
     static REGION_SIZE = 256;
+    static MAX_CACHED_CHEST_SETS = 256;
+    static chestSetCache = new Map();
 
     /**
      * Registers a structure definition.
@@ -37,6 +67,58 @@ export class ChestLootInjector {
      * Order matters: first match wins.
      */
     static structures = {
+        "ancient_city": {
+            "minecraft:reinforced_deepslate": 1,
+            "minecraft:sculk": 2
+        },
+        "trial_chambers": {
+            "minecraft:tuff_bricks": 2,
+            "minecraft:copper_grate": 1
+        },
+        "woodland_mansion": {
+            "minecraft:dark_oak_planks": 4,
+            "minecraft:white_wool": 2
+        },
+        "stronghold": {
+            "minecraft:stone_bricks": 3,
+            "minecraft:iron_bars": 1
+        },
+        "end_city": {
+            "minecraft:purpur_block": 3,
+            "minecraft:end_rod": 1
+        },
+        "jungle_temple": {
+            "minecraft:mossy_cobblestone": 4,
+            "minecraft:dispenser": 1
+        },
+        "igloo": {
+            "minecraft:snow": 3,
+            "minecraft:white_carpet": 1
+        },
+        "shipwreck": {
+            "minecraft:oak_planks": 3,
+            "minecraft:trapdoor": 1
+        },
+        "shipwreck_spruce": {
+            "minecraft:spruce_planks": 3,
+            "minecraft:spruce_trapdoor": 1
+        },
+        "shipwreck_birch": {
+            "minecraft:birch_planks": 3,
+            "minecraft:birch_trapdoor": 1
+        },
+        "shipwreck_jungle": {
+            "minecraft:jungle_planks": 3,
+            "minecraft:jungle_trapdoor": 1
+        },
+        "shipwreck_acacia": {
+            "minecraft:acacia_planks": 3,
+            "minecraft:acacia_trapdoor": 1
+        },
+        "shipwreck_dark_oak": {
+            "minecraft:dark_oak_planks": 3,
+            "minecraft:dark_oak_trapdoor": 1
+        },
         "desert_pyramid": {
             "minecraft:chiseled_sandstone": 2,
             "minecraft:tnt": 2
@@ -70,20 +152,8 @@ export class ChestLootInjector {
      * @param {Array<{item:string, chance:number, conditions?:Object}>} loot
      */
     static registerStructureLoot(structureId, loot) {
-        if (!this.structureLoot[structureId]) {
-            this.structureLoot[structureId] = [...loot];
-            return;
-        }
+        const map = this.structureLoot[structureId] ?? new Map();
 
-        const existing = this.structureLoot[structureId];
-        const map = new Map();
-
-        // Existing loot
-        for (const entry of existing) {
-            map.set(entry.item, entry);
-        }
-
-        // New loot
         for (const entry of loot) {
             const prev = map.get(entry.item);
             if (!prev || entry.chance > prev.chance) {
@@ -91,7 +161,7 @@ export class ChestLootInjector {
             }
         }
 
-        this.structureLoot[structureId] = Array.from(map.values());
+        this.structureLoot[structureId] = map;
     }
 
     /**
@@ -103,20 +173,8 @@ export class ChestLootInjector {
      * @param {Array<{item:string, chance:number}>} loot
      */
     static registerBiomeLoot(biomeId, loot) {
-        if (!this.biomeLoot[biomeId]) {
-            this.biomeLoot[biomeId] = [...loot];
-            return;
-        }
+        const map = this.biomeLoot[biomeId] ?? new Map();
 
-        const existing = this.biomeLoot[biomeId];
-        const map = new Map();
-
-        // Existing loot
-        for (const entry of existing) {
-            map.set(entry.item, entry);
-        }
-
-        // New loot
         for (const entry of loot) {
             const prev = map.get(entry.item);
             if (!prev || entry.chance > prev.chance) {
@@ -124,7 +182,7 @@ export class ChestLootInjector {
             }
         }
 
-        this.biomeLoot[biomeId] = Array.from(map.values());
+        this.biomeLoot[biomeId] = map;
     }
 
     /**
@@ -169,8 +227,16 @@ export class ChestLootInjector {
      */
     static getChestSet(baseKey, pos) {
         const key = this.regionPropertyKey(baseKey, pos);
+        if (this.chestSetCache.has(key)) {
+            const cached = this.chestSetCache.get(key);
+            this.chestSetCache.delete(key);
+            this.chestSetCache.set(key, cached);
+            return cached;
+        }
         const raw = world.getDynamicProperty(key);
-        return raw ? JSON.parse(raw) : {};
+        const value = raw ? JSON.parse(raw) : {};
+        this.cacheChestSet(key, value);
+        return value;
     }
 
     /**
@@ -182,7 +248,16 @@ export class ChestLootInjector {
      */
     static saveChestSet(baseKey, pos, set) {
         const key = this.regionPropertyKey(baseKey, pos);
+        this.cacheChestSet(key, set);
         world.setDynamicProperty(key, JSON.stringify(set));
+    }
+
+    static cacheChestSet(key, set) {
+        this.chestSetCache.delete(key);
+        this.chestSetCache.set(key, set);
+        if (this.chestSetCache.size <= this.MAX_CACHED_CHEST_SETS) return;
+        const oldestKey = this.chestSetCache.keys().next().value;
+        this.chestSetCache.delete(oldestKey);
     }
 
     /**
@@ -246,6 +321,7 @@ export class ChestLootInjector {
      * - Intended for development, debugging, or admin commands only.
      */
     static resetChestTracking() {
+        this.chestSetCache.clear();
         const ids = world.getDynamicPropertyIds();
 
         for (const id of ids) {
@@ -433,7 +509,7 @@ export class ChestLootInjector {
      * - Empty slots are always preferred
      * - Replaceable slots are used only if no empty slots remain
      */
-    static injectLoot(lootTable, block) {
+    static injectLoot(lootTable, block, player) {
         if (!lootTable || lootTable.size === 0) return;
 
         const container =
@@ -444,7 +520,7 @@ export class ChestLootInjector {
         const { empty, replaceable } = this.getSlotPools(container);
 
         for (const [itemId, chance] of lootTable) {
-            if (Math.random() > chance) continue;
+            if (!rollLootChance(chance, player)) continue;
 
             let pool;
 
@@ -473,7 +549,7 @@ export class ChestLootInjector {
      *
      * @param {Block} block Chest block
      */
-    static resolve(block) {
+    static resolve(block, player) {
         if (!this.canInjectChest(block)) return;
 
         const dimension = block.dimension;
@@ -485,8 +561,8 @@ export class ChestLootInjector {
         // world.sendMessage(`${biomeId} ${structureId}`)
 
         // Obtain loot tables
-        const biomeTable = this.biomeLoot[biomeId] ?? null;
-        const structureTable = this.structureLoot[structureId] ?? null;
+        const biomeTable = this.biomeLoot[biomeId]?.values() ?? null;
+        const structureTable = this.structureLoot[structureId]?.values() ?? null;
 
         // Merge loot tables
         const finalLoot = this.mergeLootTables(
@@ -504,7 +580,7 @@ export class ChestLootInjector {
         if (finalLoot.size === 0) return;
 
         // Inject loot
-        this.injectLoot(finalLoot, block);
+        this.injectLoot(finalLoot, block, player);
     }
 
     /**
@@ -595,9 +671,9 @@ export class ChestLootInjector {
     }
 }
 
-world.afterEvents.playerInteractWithBlock.subscribe(({ block }) => {
+world.afterEvents.playerInteractWithBlock.subscribe(({ block, player }) => {
     if (block.typeId !== "minecraft:chest") return;
-    ChestLootInjector.resolve(block);
+    ChestLootInjector.resolve(block, player);
 });
 
 world.afterEvents.playerPlaceBlock.subscribe(({ block }) => {
@@ -710,7 +786,7 @@ export class MobLootInjector {
             if (conditions) {
                 if (conditions.dimension && conditions.dimension != deadEntity?.dimension?.id) return
             };
-            if (Math.random() <= drop.chance) {
+            if (rollLootChance(drop.chance, player)) {
                 try {
                     deadEntity.dimension.spawnItem(new ItemStack(drop.item, drop.amount), deadEntity.location);
                 } catch {

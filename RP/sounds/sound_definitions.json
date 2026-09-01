@@ -1,0 +1,31 @@
+{
+  "format_version": "1.20.0",
+  "sound_definitions": {
+    "dorios.statscore.soul_explosion": {
+      "category": "player",
+      "sounds": [
+        "sounds/statscore/soul_explosion0",
+        "sounds/statscore/soul_explosion1"
+      ]
+    },
+    "dorios.statscore.wind_launch": {
+      "category": "player",
+      "sounds": [
+        "sounds/statscore/wind_launch0",
+        "sounds/statscore/wind_launch1"
+      ]
+    },
+    "dorios.statscore.blessing": {
+      "category": "player",
+      "sounds": ["sounds/statscore/blessing"]
+    },
+    "dorios.statscore.blessing_curse": {
+      "category": "player",
+      "sounds": ["sounds/statscore/blessing_curse"]
+    },
+    "dorios.statscore.void_singularity": {
+      "category": "player",
+      "sounds": ["sounds/statscore/void_singularity"]
+    }
+  }
+}

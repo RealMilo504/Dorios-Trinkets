@@ -1,0 +1,15 @@
+{
+  "format_version": "1.20.80",
+  "minecraft:item": {
+    "description": {
+      "identifier": "dorios:sandstrider_boots",
+      "menu_category": {
+        "category": "equipment"
+      }
+    },
+    "components": {
+      "minecraft:icon": "dorios_sandstrider_boots",
+      "minecraft:max_stack_size": 1
+    }
+  }
+}

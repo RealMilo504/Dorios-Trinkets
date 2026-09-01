@@ -1,0 +1,16 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:recipe_shaped": {
+		"description": { "identifier": "dorios:witchs_crooked_hat" },
+		"tags": ["crafting_table"],
+		"key": {
+			"A": { "item": "minecraft:amethyst_shard" },
+			"B": { "item": "minecraft:black_dye" },
+			"E": { "item": "minecraft:fermented_spider_eye" },
+			"L": { "item": "minecraft:leather" }
+		},
+		"pattern": ["  A", "BLE", "LLL"],
+		"result": { "item": "dorios:witchs_crooked_hat" },
+		"unlock": [{ "item": "minecraft:fermented_spider_eye" }]
+	}
+}

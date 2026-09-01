@@ -1,0 +1,54 @@
+{
+  "screen": "trinkets_loadout",
+  "base_resolution": [320, 240],
+  "gui_scale": 2,
+  "root": {
+    "id": "common_panel",
+    "pos": [0, 0],
+    "size": [216, 184]
+  },
+  "panel": {
+    "id": "trinkets_top",
+    "pos": [0, -49],
+    "size": [200, 90]
+  },
+  "elements": [
+    { "id": "hat", "collection_index": 0, "overlay": "slot_hat", "pos": [8, 0], "size": [16, 16] },
+    { "id": "face", "collection_index": 13, "overlay": "slot_face", "pos": [8, 18], "size": [16, 16] },
+    { "id": "body", "collection_index": 1, "overlay": "slot_body", "pos": [8, 36], "size": [16, 16] },
+    { "id": "feet_1", "collection_index": 2, "overlay": "slot_feet", "pos": [8, 54], "size": [16, 16] },
+    { "id": "feet_2", "collection_index": 22, "overlay": "slot_feet", "pos": [8, 72], "size": [16, 16] },
+
+    { "id": "necklace", "collection_index": 3, "overlay": "slot_necklace", "pos": [92, 0], "size": [16, 16] },
+    { "id": "charm", "collection_index": 5, "overlay": "slot_charm", "pos": [110, 0], "size": [16, 16] },
+    { "id": "archaic_charm", "collection_index": 11, "overlay": "slot_main_charm", "pos": [128, 0], "size": [16, 16] },
+    { "id": "doll", "collection_index": 9, "overlay": "slot_doll", "pos": [146, 0], "size": [16, 16] },
+    { "id": "talisman", "collection_index": 6, "overlay": "slot_talisman", "pos": [164, 0], "size": [16, 16] },
+    { "id": "amulet", "collection_index": 12, "overlay": "slot_amulet", "pos": [182, 0], "size": [16, 16] },
+
+    { "id": "hearty_charm", "collection_index": 8, "overlay": "slot_hearty_charm", "pos": [92, 18], "size": [16, 16] },
+    { "id": "belt", "collection_index": 14, "overlay": "slot_belt", "pos": [110, 18], "size": [16, 16] },
+    { "id": "gauntlet_1", "collection_index": 7, "overlay": "slot_gauntlet", "pos": [128, 18], "size": [16, 16] },
+    { "id": "gauntlet_2", "collection_index": 21, "overlay": "slot_gauntlet", "pos": [146, 18], "size": [16, 16] },
+    { "id": "special_ring_1", "collection_index": 10, "overlay": "slot_main_ring", "pos": [164, 18], "size": [16, 16] },
+    { "id": "special_ring_2", "collection_index": 20, "overlay": "slot_main_ring", "pos": [182, 18], "size": [16, 16] },
+
+    { "id": "ring_1", "collection_index": 4, "overlay": "slot_ring", "pos": [92, 36], "size": [16, 16] },
+    { "id": "ring_2", "collection_index": 15, "overlay": "slot_ring", "pos": [110, 36], "size": [16, 16] },
+    { "id": "ring_3", "collection_index": 16, "overlay": "slot_ring", "pos": [128, 36], "size": [16, 16] },
+    { "id": "ring_4", "collection_index": 17, "overlay": "slot_ring", "pos": [146, 36], "size": [16, 16] },
+    { "id": "ring_5", "collection_index": 18, "overlay": "slot_ring", "pos": [164, 36], "size": [16, 16] },
+    { "id": "ring_6", "collection_index": 19, "overlay": "slot_ring", "pos": [182, 36], "size": [16, 16] }
+  ],
+  "constraints": [
+    { "op": "same_size", "ids": ["hat", "face", "body", "feet_1", "feet_2", "necklace", "charm", "archaic_charm", "doll", "talisman", "amulet", "hearty_charm", "belt", "gauntlet_1", "gauntlet_2", "special_ring_1", "special_ring_2", "ring_1", "ring_2", "ring_3", "ring_4", "ring_5", "ring_6"] },
+    { "op": "align_x", "edge": "start", "ids": ["hat", "face", "body", "feet_1", "feet_2"] },
+    { "op": "equal_gap_y", "gap": 2, "ids": ["hat", "face", "body", "feet_1", "feet_2"] },
+    { "op": "equal_gap_x", "gap": 2, "ids": ["necklace", "charm", "archaic_charm", "doll", "talisman", "amulet"] },
+    { "op": "equal_gap_x", "gap": 2, "ids": ["hearty_charm", "belt", "gauntlet_1", "gauntlet_2", "special_ring_1", "special_ring_2"] },
+    { "op": "equal_gap_x", "gap": 2, "ids": ["ring_1", "ring_2", "ring_3", "ring_4", "ring_5", "ring_6"] },
+    { "op": "align_y", "edge": "start", "ids": ["necklace", "charm", "archaic_charm", "doll", "talisman", "amulet"] },
+    { "op": "align_y", "edge": "start", "ids": ["hearty_charm", "belt", "gauntlet_1", "gauntlet_2", "special_ring_1", "special_ring_2"] },
+    { "op": "align_y", "edge": "start", "ids": ["ring_1", "ring_2", "ring_3", "ring_4", "ring_5", "ring_6"] }
+  ]
+}

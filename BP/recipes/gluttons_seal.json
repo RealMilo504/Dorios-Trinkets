@@ -1,0 +1,30 @@
+{
+  "format_version": "1.20.80",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "dorios:gluttons_seal"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "ingredients": [
+      {
+        "item": "minecraft:golden_carrot"
+      },
+      {
+        "item": "minecraft:cake"
+      },
+      {
+        "item": "minecraft:amethyst_shard"
+      }
+    ],
+    "result": {
+      "item": "dorios:gluttons_seal"
+    },
+    "unlock": [
+      {
+        "item": "minecraft:golden_carrot"
+      }
+    ]
+  }
+}

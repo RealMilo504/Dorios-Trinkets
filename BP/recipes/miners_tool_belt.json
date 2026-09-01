@@ -1,0 +1,1 @@
+{"format_version":"1.20.80","minecraft:recipe_shaped":{"description":{"identifier":"dorios:miners_tool_belt"},"tags":["crafting_table"],"key":{"B":{"item":"dorios:empty_belt"},"P":{"item":"minecraft:iron_pickaxe"},"T":{"item":"minecraft:torch"}},"pattern":[" T ","PBP"," T "],"result":{"item":"dorios:miners_tool_belt"},"unlock":[{"item":"minecraft:iron_pickaxe"}]}}

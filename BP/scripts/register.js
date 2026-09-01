@@ -44,9 +44,9 @@ system.afterEvents.scriptEventReceive.subscribe(e => {
 
 
 const trinkets = {
-    head: {
+    hat: {
         "dorios:abyssal_diver_helmet": { // Obtained in ocean chests, deep more chance and also drowned
-            trinket: "head",
+            trinket: "hat",
             stats: {
                 waterSpeed: 20
             },
@@ -73,7 +73,7 @@ const trinkets = {
 
         },
         "dorios:broken_paladin_helmet": {
-            trinket: "head",
+            trinket: "hat",
             stats: {
                 attack: 1
             },
@@ -90,33 +90,8 @@ const trinkets = {
                 ]
             }
         },
-        "dorios:night_vision_goggles": {
-            trinket: "head",
-            passives: {
-                night_vision: 1
-            },
-            drops: [
-                {
-                    entity: "minecraft:phantom",
-                    chance: 0.10
-                }
-            ]
-        },
-        "dorios:night_vision_mask": {
-            trinket: "head",
-            passives: {
-                night_vision: 1
-            },
-            immunities: ['Darkness', 'Blindness'],
-            drops: [
-                {
-                    entity: "minecraft:warden",
-                    chance: 0.25
-                }
-            ]
-        },
         "dorios:restored_paladin_helmet": {
-            trinket: "head",
+            trinket: "hat",
             stats: {
                 attack: 3
             },
@@ -130,6 +105,93 @@ const trinkets = {
                         structure: "nether_fortress",
                         chance: 0.08
                     }
+                ]
+            }
+        },
+        "dorios:witchs_crooked_hat": {
+            trinket: "hat",
+            stats: {
+                mana: 30,
+                manaRegen: 2
+            },
+            drops: [
+                {
+                    entity: "minecraft:witch",
+                    chance: 0.025
+                }
+            ]
+        },
+        "dorios:paladin_circlet": {
+            trinket: "hat",
+            stats: {
+                health: 4,
+                damageReduction: 5
+            }
+        },
+        "dorios:tideforged_crown": {
+            trinket: "hat",
+            stats: {
+                waterSpeed: 30
+            },
+            passives: {
+                conduit_power: 1
+            },
+            drops: [
+                {
+                    entity: "minecraft:drowned",
+                    chance: 0.02
+                }
+            ],
+            loot: {
+                biomes: [
+                    { biome: "minecraft:deep_ocean", chance: 0.08 },
+                    { biome: "minecraft:deep_cold_ocean", chance: 0.08 },
+                    { biome: "minecraft:deep_lukewarm_ocean", chance: 0.08 }
+                ]
+            }
+        },
+        "dorios:deepdelvers_cap": {
+            trinket: "hat"
+        },
+        "dorios:deepdelvers_cap_tag": {
+            passives: {
+                night_vision: 1,
+                haste: 1
+            }
+        },
+        "dorios:beekeepers_hat": {
+            trinket: "hat",
+            immunities: ["Poison"],
+            drops: [
+                {
+                    entity: "minecraft:bee",
+                    chance: 0.025
+                }
+            ]
+        },
+        "dorios:crown_of_last_light": {
+            trinket: "hat",
+            drops: [
+                {
+                    entity: "minecraft:evocation_illager",
+                    chance: 0.02
+                }
+            ]
+        },
+        "dorios:stormcaller_hood": {
+            trinket: "hat",
+            drops: [
+                {
+                    entity: "minecraft:phantom",
+                    chance: 0.025
+                }
+            ]
+        },
+        "dorios:trial_champion_crown": {
+            trinket: "hat",
+            loot: {
+                structures: [
+                    { structure: "trial_chambers", chance: 0.12 }
                 ]
             }
         }
@@ -409,6 +471,34 @@ const trinkets = {
                 }
             ]
         },
+        "dorios:travelers_cloak_pin": {
+            trinket: "body"
+        },
+        "dorios:alchemists_cloak_pin": {
+            trinket: "body",
+            stats: {
+                mana: 15
+            }
+        },
+        "dorios:spider_silk_mantle": {
+            trinket: "body",
+            drops: [
+                { entity: "minecraft:spider", chance: 0.03 },
+                { entity: "minecraft:cave_spider", chance: 0.05 }
+            ]
+        },
+        "dorios:phantom_membrane_mantle": {
+            trinket: "body",
+            drops: [
+                { entity: "minecraft:phantom", chance: 0.04 }
+            ]
+        },
+        "dorios:armadillo_shield_brooch": {
+            trinket: "body",
+            drops: [
+                { entity: "minecraft:armadillo", chance: 0.04 }
+            ]
+        },
     },
     gauntlet: {
         "dorios:fire_claw": {
@@ -516,6 +606,21 @@ const trinkets = {
                     entity: "minecraft:elder_guardian",
                     chance: 0.60
                 }
+            ]
+        },
+        "dorios:hoglin_tusk_gauntlet": {
+            trinket: "gauntlet",
+            stats: {
+                attack: 1
+            },
+            drops: [
+                { entity: "minecraft:hoglin", chance: 0.04 }
+            ]
+        },
+        "dorios:wind_bracer": {
+            trinket: "gauntlet",
+            drops: [
+                { entity: "minecraft:breeze", chance: 0.025 }
             ]
         }
     },
@@ -637,6 +742,36 @@ const trinkets = {
                     { biome: "minecraft:deep_lukewarm_ocean", chance: 0.30 }
                 ]
             }
+        },
+        "dorios:wayfarers_knot": {
+            trinket: "charm"
+        },
+        "dorios:miners_token": {
+            trinket: "charm"
+        },
+        "dorios:stronghold_eye_charm": {
+            trinket: "charm",
+            loot: {
+                structures: [
+                    { structure: "stronghold", chance: 0.10 }
+                ]
+            }
+        },
+        "dorios:lost_allay_bell": {
+            trinket: "charm",
+            loot: {
+                structures: [
+                    { structure: "pillager_outpost", chance: 0.08 }
+                ]
+            }
+        },
+        "dorios:desert_scarab_charm": {
+            trinket: "charm",
+            loot: {
+                structures: [
+                    { structure: "desert_pyramid", chance: 0.08 }
+                ]
+            }
         }
     },
     archaicCharm: {
@@ -696,6 +831,314 @@ const trinkets = {
             passives: {
                 strength: 1
             }
+        },
+        "dorios:void_covenant": {
+            trinket: "archaiccharm",
+            stats: {
+                health: -10,
+                attackMulti: 12,
+                critChance: 6
+            }
+        },
+        "dorios:endless_eye": {
+            trinket: "archaiccharm",
+            stats: {
+                health: -4,
+                critChance: 8
+            }
+        },
+        "dorios:phoenix_ash_sigil": {
+            trinket: "archaiccharm"
+        },
+        "dorios:chronoshard": {
+            trinket: "archaiccharm"
+        },
+        "dorios:worldroot_knot": {
+            trinket: "archaiccharm"
+        },
+        "dorios:worldroot_active_tag": {
+            passives: {
+                regeneration: 1,
+                resistance: 1
+            }
+        },
+        "dorios:stormbound_idol": {
+            trinket: "archaiccharm"
+        },
+        "dorios:gluttons_seal": {
+            trinket: "archaiccharm",
+            stats: {
+                manaRegen: -2
+            }
+        },
+        "dorios:sculk_resonator": {
+            trinket: "archaiccharm",
+            stats: {
+                health: -4
+            },
+            loot: {
+                structures: [
+                    { structure: "ancient_city", chance: 0.08 }
+                ]
+            }
+        },
+        "dorios:jungle_reliquary": {
+            trinket: "archaiccharm",
+            loot: {
+                structures: [
+                    { structure: "jungle_temple", chance: 0.10 }
+                ]
+            }
+        }
+    },
+    belt: {
+        "dorios:adventurers_belt": {
+            trinket: "belt",
+            stats: {
+                mana: 20
+            }
+        },
+        "dorios:ironbound_girdle": {
+            trinket: "belt"
+        },
+        "dorios:miners_tool_belt": {
+            trinket: "belt",
+            stats: {
+                durabilityPreserve: 5
+            }
+        },
+        "dorios:tideforged_girdle": {
+            trinket: "belt",
+            stats: {
+                waterSpeed: 25
+            },
+            drops: [
+                {
+                    entity: "minecraft:drowned",
+                    chance: 0.035
+                }
+            ],
+            loot: {
+                biomes: [
+                    { biome: "minecraft:ocean", chance: 0.08 },
+                    { biome: "minecraft:deep_ocean", chance: 0.12 },
+                    { biome: "minecraft:cold_ocean", chance: 0.08 },
+                    { biome: "minecraft:deep_cold_ocean", chance: 0.12 }
+                ]
+            }
+        },
+        "dorios:bloodbound_sash": {
+            trinket: "belt",
+            stats: {
+                health: -2
+            },
+            drops: [
+                {
+                    entity: "minecraft:piglin_brute",
+                    chance: 0.05
+                }
+            ],
+            loot: {
+                structures: [
+                    { structure: "bastion", chance: 0.08 }
+                ]
+            }
+        },
+        "dorios:toolwright_belt": {
+            trinket: "belt"
+        },
+        "dorios:soulcatcher_belt": {
+            trinket: "belt",
+            drops: [
+                {
+                    entity: "minecraft:wither_skeleton",
+                    chance: 0.035
+                }
+            ],
+            loot: {
+                structures: [
+                    { structure: "nether_fortress", chance: 0.08 }
+                ]
+            }
+        },
+        "dorios:hunters_bandolier": {
+            trinket: "belt",
+            stats: {
+                projectileDamage: 10
+            },
+            drops: [
+                {
+                    entity: "minecraft:pillager",
+                    chance: 0.025
+                }
+            ],
+            loot: {
+                structures: [
+                    { structure: "pillager_outpost", chance: 0.12 }
+                ]
+            }
+        },
+        "dorios:builders_harness": {
+            trinket: "belt"
+        },
+        "dorios:magma_cinch": {
+            trinket: "belt",
+            stats: {
+                lavaSpeed: 40
+            },
+            drops: [
+                {
+                    entity: "minecraft:magma_cube",
+                    chance: 0.035
+                }
+            ],
+            loot: {
+                structures: [
+                    { structure: "bastion", chance: 0.06 },
+                    { structure: "nether_fortress", chance: 0.08 }
+                ]
+            }
+        },
+        "dorios:magma_cinch_tag": {
+            passives: {
+                fire_resistance: 1
+            }
+        },
+        "dorios:ravager_horn_buckle": {
+            trinket: "belt",
+            drops: [
+                { entity: "minecraft:ravager", chance: 0.06 }
+            ]
+        }
+    },
+    face: {
+        "dorios:night_vision_goggles": {
+            trinket: "face",
+            passives: {
+                night_vision: 1
+            },
+            drops: [
+                {
+                    entity: "minecraft:phantom",
+                    chance: 0.10
+                }
+            ]
+        },
+        "dorios:night_vision_mask": {
+            trinket: "face",
+            passives: {
+                night_vision: 1
+            },
+            immunities: ['Darkness', 'Blindness'],
+            drops: [
+                {
+                    entity: "minecraft:warden",
+                    chance: 0.25
+                }
+            ]
+        },
+        "dorios:marksman_monocle": {
+            trinket: "face",
+            stats: {
+                projectileDamage: 6,
+                rangedCritChance: 3
+            },
+            drops: [
+                {
+                    entity: "minecraft:pillager",
+                    chance: 0.025
+                }
+            ],
+            loot: {
+                structures: [
+                    { structure: "pillager_outpost", chance: 0.12 }
+                ]
+            }
+        },
+        "dorios:plague_doctor_mask": {
+            trinket: "face",
+            stats: {
+                health: -2
+            },
+            immunities: ["Poison", "Hunger"],
+            drops: [
+                {
+                    entity: "minecraft:witch",
+                    chance: 0.035
+                }
+            ]
+        },
+        "dorios:ember_respirator": {
+            trinket: "face",
+            drops: [
+                {
+                    entity: "minecraft:blaze",
+                    chance: 0.035
+                }
+            ],
+            loot: {
+                structures: [
+                    { structure: "nether_fortress", chance: 0.08 }
+                ]
+            }
+        },
+        "dorios:copper_prospecting_lens": {
+            trinket: "face"
+        },
+        "dorios:echo_visor": {
+            trinket: "face",
+            drops: [
+                {
+                    entity: "minecraft:warden",
+                    chance: 0.08
+                }
+            ]
+        },
+        "dorios:mirror_mask": {
+            trinket: "face"
+        },
+        "dorios:veil_of_silence": {
+            trinket: "face",
+            drops: [
+                {
+                    entity: "minecraft:evocation_illager",
+                    chance: 0.04
+                }
+            ]
+        },
+        "dorios:veil_silence_active_tag": {
+            passives: {
+                invisibility: 1
+            }
+        },
+        "dorios:ender_visor": {
+            trinket: "face",
+            drops: [
+                {
+                    entity: "minecraft:enderman",
+                    chance: 0.0125
+                },
+                {
+                    entity: "minecraft:ender_dragon",
+                    chance: 0.10
+                }
+            ]
+        },
+        "dorios:huskbone_mask": {
+            trinket: "face",
+            immunities: ["Hunger"],
+            drops: [
+                { entity: "minecraft:husk", chance: 0.04 }
+            ]
+        },
+        "dorios:duelist_wraps": {
+            trinket: "gauntlet",
+            stats: {
+                attack: 2
+            }
+        },
+        "dorios:impact_glove": {
+            trinket: "gauntlet"
         }
     },
     doll: {
@@ -710,6 +1153,120 @@ const trinkets = {
                     chance: 0.05
                 }
             ]
+        },
+        "dorios:stone_guardian_doll": {
+            trinket: "doll",
+            drops: [
+                {
+                    entity: "minecraft:iron_golem",
+                    chance: 0.025
+                }
+            ]
+        },
+        "dorios:stone_guardian_retort": {
+            stats: {
+                knockbackRes: 15
+            }
+        },
+        "dorios:hollow_doll": {
+            trinket: "doll",
+            stats: {
+                health: -4,
+                mana: 35,
+                manaRegen: 2
+            },
+            drops: [
+                {
+                    entity: "minecraft:warden",
+                    chance: 0.12
+                }
+            ]
+        },
+        "dorios:lucky_ragdoll": {
+            trinket: "doll",
+            drops: [
+                {
+                    entity: "minecraft:evocation_illager",
+                    chance: 0.05
+                }
+            ]
+        },
+        "dorios:straw_effigy": {
+            trinket: "doll"
+        },
+        "dorios:marionette_of_spite": {
+            trinket: "doll",
+            drops: [
+                {
+                    entity: "minecraft:witch",
+                    chance: 0.025
+                },
+                {
+                    entity: "minecraft:evocation_illager",
+                    chance: 0.05
+                }
+            ]
+        },
+        "dorios:creeper_doll": {
+            trinket: "doll",
+            drops: [
+                {
+                    entity: "minecraft:creeper",
+                    chance: 0.03
+                }
+            ]
+        },
+        "dorios:leech_doll": {
+            trinket: "doll",
+            drops: [
+                {
+                    entity: "minecraft:drowned",
+                    chance: 0.03
+                },
+                {
+                    entity: "minecraft:zombie",
+                    chance: 0.01
+                }
+            ]
+        },
+        "dorios:leech_doll_surge": {
+            stats: {
+                lifeSteal: 8
+            }
+        },
+        "dorios:guardian_effigy": {
+            trinket: "doll",
+            drops: [
+                {
+                    entity: "minecraft:guardian",
+                    chance: 0.025
+                },
+                {
+                    entity: "minecraft:elder_guardian",
+                    chance: 0.12
+                }
+            ]
+        },
+        "dorios:packed_snow_doll": {
+            trinket: "doll",
+            loot: {
+                structures: [
+                    { structure: "igloo", chance: 0.12 }
+                ]
+            }
+        },
+        "dorios:shipwrecked_doll": {
+            trinket: "doll",
+            loot: {
+                structures: [
+                    { structure: "shipwreck", chance: 0.10 },
+                    { structure: "shipwreck_spruce", chance: 0.10 },
+                    { structure: "shipwreck_birch", chance: 0.10 },
+                    { structure: "shipwreck_jungle", chance: 0.10 },
+                    { structure: "shipwreck_acacia", chance: 0.10 },
+                    { structure: "shipwreck_dark_oak", chance: 0.10 }
+                ]
+            }
         }
     },
     feet: {
@@ -756,6 +1313,61 @@ const trinkets = {
                     }
                 ]
             }
+        },
+        "dorios:featherstep_anklets": {
+            trinket: "feet",
+            stats: {
+                speed: 10
+            }
+        },
+        "dorios:tidewalker_fins": {
+            trinket: "feet",
+            stats: {
+                waterSpeed: 60,
+                speed: -10
+            }
+        },
+        "dorios:weighted_sabaton_charms": {
+            trinket: "feet",
+            stats: {
+                damageReduction: 6,
+                knockbackRes: 15,
+                speed: -8
+            }
+        },
+        "dorios:sandstrider_boots": {
+            trinket: "feet"
+        },
+        "dorios:sandstrider_bonus_tag": {
+            stats: {
+                speed: 35
+            }
+        },
+        "dorios:rootwalker_sandals": {
+            trinket: "feet"
+        },
+        "dorios:rootwalker_bonus_tag": {
+            stats: {
+                speed: 25
+            }
+        },
+        "dorios:frostwalker_soles": {
+            trinket: "feet"
+        },
+        "dorios:shadowstep_greaves": {
+            trinket: "feet"
+        },
+        "dorios:slimebound_boots": {
+            trinket: "feet"
+        },
+        "dorios:goatstep_anklets": {
+            trinket: "feet",
+            stats: {
+                knockbackRes: 10
+            },
+            drops: [
+                { entity: "minecraft:goat", chance: 0.05 }
+            ]
         }
     },
     rings: {
@@ -877,6 +1489,39 @@ const trinkets = {
                     { biome: "minecraft:deep_ocean", chance: 0.40 },
                     { biome: "minecraft:deep_cold_ocean", chance: 0.40 },
                     { biome: "minecraft:deep_lukewarm_ocean", chance: 0.40 }
+                ]
+            }
+        },
+        "dorios:endermite_loop": {
+            trinket: "ring",
+            stats: {
+                critChance: 6,
+                speed: 5
+            },
+            drops: [
+                { entity: "minecraft:endermite", chance: 0.05 }
+            ]
+        },
+        "dorios:silverfish_scale_ring": {
+            trinket: "ring",
+            drops: [
+                { entity: "minecraft:silverfish", chance: 0.04 }
+            ]
+        },
+        "dorios:breeze_core_loop": {
+            trinket: "ring",
+            stats: {
+                knockbackRes: 12
+            },
+            drops: [
+                { entity: "minecraft:breeze", chance: 0.035 }
+            ]
+        },
+        "dorios:ominous_key_ring": {
+            trinket: "ring",
+            loot: {
+                structures: [
+                    { structure: "trial_chambers", chance: 0.08 }
                 ]
             }
         }
@@ -1319,6 +1964,60 @@ const trinkets = {
                     chance: 0.05
                 }
             ]
+        },
+        "dorios:lapis_focus": {
+            trinket: "amulet",
+            stats: {
+                mana: 40,
+                manaRegen: 2
+            }
+        },
+        "dorios:geode_amulet": {
+            trinket: "amulet",
+            stats: {
+                health: 4,
+                damageReduction: 5
+            }
+        },
+        "dorios:prismatic_aegis": {
+            trinket: "amulet"
+        },
+        "dorios:moonstone_amulet": {
+            trinket: "amulet"
+        },
+        "dorios:moonstone_active_tag": {
+            stats: {
+                critChance: 5,
+                manaRegen: 2
+            }
+        },
+        "dorios:sunstone_amulet": {
+            trinket: "amulet"
+        },
+        "dorios:sunstone_active_tag": {
+            passives: {
+                regeneration: 1
+            }
+        },
+        "dorios:echoheart_amulet": {
+            trinket: "amulet"
+        },
+        "dorios:gravekeeper_amulet": {
+            trinket: "amulet"
+        },
+        "dorios:tempest_heart_amulet": {
+            trinket: "amulet"
+        },
+        "dorios:mansion_ward_amulet": {
+            trinket: "amulet",
+            stats: {
+                mana: 20
+            },
+            loot: {
+                structures: [
+                    { structure: "woodland_mansion", chance: 0.10 }
+                ]
+            }
         }
     },
     talisman: {
@@ -1372,6 +2071,47 @@ const trinkets = {
                     chance: 0.05
                 }
             ]
+        },
+        "dorios:wardstone": {
+            trinket: "talisman",
+            stats: {
+                knockbackRes: 10
+            }
+        },
+        "dorios:hunters_fang": {
+            trinket: "talisman"
+        },
+        "dorios:ocean_coin": {
+            trinket: "talisman",
+            stats: {
+                waterSpeed: 20
+            },
+            passives: {
+                luck: 1
+            }
+        },
+        "dorios:quarry_sigil": {
+            trinket: "talisman"
+        },
+        "dorios:totem_of_momentum": {
+            trinket: "talisman"
+        },
+        "dorios:wayfinder_compass": {
+            trinket: "talisman"
+        },
+        "dorios:stormglass_talisman": {
+            trinket: "talisman"
+        },
+        "dorios:harvesters_token": {
+            trinket: "talisman"
+        },
+        "dorios:end_city_orb": {
+            trinket: "talisman",
+            loot: {
+                structures: [
+                    { structure: "end_city", chance: 0.10 }
+                ]
+            }
         },
 
     },
@@ -1533,6 +2273,35 @@ const trinkets = {
                     { biome: "minecraft:deep_ocean", chance: 0.40 },
                     { biome: "minecraft:deep_cold_ocean", chance: 0.40 },
                     { biome: "minecraft:deep_lukewarm_ocean", chance: 0.40 }
+                ]
+            }
+        },
+        "dorios:iron_locket": {
+            trinket: "necklace",
+            stats: {
+                knockbackRes: 8
+            }
+        },
+        "dorios:emerald_chain": {
+            trinket: "necklace",
+            passives: {
+                luck: 1
+            }
+        },
+        "dorios:ghast_tear_locket": {
+            trinket: "necklace",
+            stats: {
+                health: 2
+            },
+            drops: [
+                { entity: "minecraft:ghast", chance: 0.04 }
+            ]
+        },
+        "dorios:cracked_bastion_medallion": {
+            trinket: "necklace",
+            loot: {
+                structures: [
+                    { structure: "bastion", chance: 0.08 }
                 ]
             }
         }

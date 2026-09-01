@@ -1,0 +1,1 @@
+{"format_version":"1.20.80","minecraft:recipe_shaped":{"description":{"identifier":"dorios:blank_mask"},"tags":["crafting_table"],"key":{"C":{"item":"minecraft:clay_ball"},"P":{"item":"minecraft:paper"},"S":{"item":"minecraft:string"}},"pattern":[" S ","PCP"," P "],"result":{"item":"dorios:blank_mask"},"unlock":[{"item":"minecraft:paper"}]}}

@@ -21,10 +21,20 @@ Available Trinket Slots
 These are the valid slot identifiers that can be used
 in the `trinket` field when registering trinkets.
 
+The core automatically allocates repeated physical slots:
+- "ring" accepts up to 6 different common rings,
+- "witherring" accepts up to 2 special rings,
+- "gauntlet" accepts up to 2 different gauntlets,
+- "feet" accepts up to 2 different feet trinkets.
+
+Do not register new content against numbered physical slots;
+use the canonical family identifier shown below.
+
 Example:
 trinket: "ring"
 
-- "head",
+- "hat",
+- "face",
 - "body",
 - "feet",
 - "necklace",
@@ -36,7 +46,8 @@ trinket: "ring"
 - "doll",
 - "witherring",
 - "archaiccharm",
-- "amulet"
+- "amulet",
+- "belt"
 
 -----------------------------------------------------
 Available Statistics

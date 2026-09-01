@@ -1,0 +1,30 @@
+{
+  "format_version": "1.20.80",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "dorios:wayfarers_knot"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "ingredients": [
+      {
+        "item": "minecraft:string"
+      },
+      {
+        "item": "minecraft:amethyst_shard"
+      },
+      {
+        "item": "minecraft:echo_shard"
+      }
+    ],
+    "result": {
+      "item": "dorios:wayfarers_knot"
+    },
+    "unlock": [
+      {
+        "item": "minecraft:string"
+      }
+    ]
+  }
+}

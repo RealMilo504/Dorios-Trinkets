@@ -15,8 +15,8 @@ export const vanillaStats = [
 export const vanillaEventStats = ["health", "knockbackRes", "damageReduction"]
 export const manaBarFrames = ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''];
 
-export const slots = {
-    head: 0,
+export const slots = Object.freeze({
+    hat: 0,
     body: 1,
     feet: 2,
     necklace: 3,
@@ -28,8 +28,54 @@ export const slots = {
     doll: 9,
     witherring: 10,
     archaiccharm: 11,
-    amulet: 12
-};
+    amulet: 12,
+    face: 13,
+    belt: 14,
+    ring2: 15,
+    ring3: 16,
+    ring4: 17,
+    ring5: 18,
+    ring6: 19,
+    witherring2: 20,
+    gauntlet2: 21,
+    feet2: 22,
+});
+
+export const slotFamilies = Object.freeze({
+    ring: Object.freeze(["ring", "ring2", "ring3", "ring4", "ring5", "ring6"]),
+    witherring: Object.freeze(["witherring", "witherring2"]),
+    gauntlet: Object.freeze(["gauntlet", "gauntlet2"]),
+    feet: Object.freeze(["feet", "feet2"]),
+});
+
+const slotAliases = Object.freeze({
+    head: "hat",
+    rings: "ring",
+    heavyring: "witherring",
+    boots2: "feet2",
+});
+
+/**
+ * Resolves a registration slot (or legacy multi-slot array) into ordered
+ * physical inventory slot keys. Canonical family names expand automatically;
+ * explicit numbered slots remain exact destinations.
+ */
+export function getCompatibleTrinketSlotKeys(registeredSlot) {
+    const requested = Array.isArray(registeredSlot) ? registeredSlot : [registeredSlot];
+    const resolved = [];
+    const seen = new Set();
+
+    for (const rawSlot of requested) {
+        const normalized = slotAliases[String(rawSlot ?? "")] ?? String(rawSlot ?? "");
+        const candidates = slotFamilies[normalized] ?? [normalized];
+        for (const slotName of candidates) {
+            if (slots[slotName] === undefined || seen.has(slotName)) continue;
+            seen.add(slotName);
+            resolved.push(slotName);
+        }
+    }
+    return resolved;
+}
 
 export const statsConfig = {
     health: { default: 20, min: 2, max: 100, scale: 2 }, // Scale 2: 2,4,6,...
@@ -39,6 +85,9 @@ export const statsConfig = {
     knockback: { default: 0 },
     knockbackRes: { default: 0, min: 0, max: 100, scale: 1 }, // Scale 1: 1,2,3,...
     damageReduction: { default: 0, min: -100, max: 100, scale: 1 }, // Scale 1: 1,2,3,... (Negative means it receives more damage -100 => x2)
+    projectileDamage: { default: 0 },
+    rangedCritChance: { default: 0 },
+    durabilityPreserve: { default: 0 },
     speed: { default: 100 },
     waterSpeed: { default: 100 },
     lavaSpeed: { default: 100 },
@@ -87,6 +136,9 @@ export const statTexts = {
         knockback: value => `§7- Knockback: §f${value}`,
         knockbackRes: value => `§7- Knockback Resistance: §f${value}%%`,
         damageReduction: value => `§7- Damage Reduction: §f${value}%%`,
+        projectileDamage: value => `§7- Projectile Damage: §f${value}%%`,
+        rangedCritChance: value => `§7- Ranged Crit Chance: §f${value}%%`,
+        durabilityPreserve: value => `§7- Durability Preserve: §f${value}%%`,
         speed: value => `§7- Movement Speed: §f${value}%%`,
         waterSpeed: value => `§7- Water Speed: §f${value}%%`,
         lavaSpeed: value => `§7- Lava Speed: §f${value}%%`,

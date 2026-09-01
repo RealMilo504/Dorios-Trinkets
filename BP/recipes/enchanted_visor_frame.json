@@ -1,0 +1,1 @@
+{"format_version":"1.20.80","minecraft:recipe_shaped":{"description":{"identifier":"dorios:enchanted_visor_frame"},"tags":["crafting_table"],"key":{"A":{"item":"minecraft:amethyst_shard"},"B":{"item":"dorios:blank_mask"},"C":{"item":"minecraft:copper_ingot"}},"pattern":["CAC","ABA"," C "],"result":{"item":"dorios:enchanted_visor_frame"},"unlock":[{"item":"dorios:blank_mask"}]}}

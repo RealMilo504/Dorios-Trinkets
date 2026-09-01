@@ -7,15 +7,220 @@
         "groups": [
           {
             "group_identifier": {
-              "icon": "dorios:guardian_ring",
-              "name": "dorios:itemGroup.name.rings"
+              "icon": "dorios:lapis_focus",
+              "name": "dorios:itemGroup.name.amulets"
             },
             "items": [
-              "dorios:guardian_ring",
-              "dorios:healer_ring",
-              "dorios:miner_ring",
-              "dorios:runner_ring",
-              "dorios:warrior_ring"
+              "dorios:abyssal_sun_amulet",
+              "dorios:blazing_amulet",
+              "dorios:bloodbound_amulet",
+              "dorios:echoheart_amulet",
+              "dorios:geode_amulet",
+              "dorios:gravekeeper_amulet",
+              "dorios:lapis_focus",
+              "dorios:mansion_ward_amulet",
+              "dorios:moonstone_amulet",
+              "dorios:prismatic_aegis",
+              "dorios:sunstone_amulet",
+              "dorios:tempest_heart_amulet"
+            ]
+          },
+          {
+            "group_identifier": {
+              "icon": "dorios:void_covenant",
+              "name": "dorios:itemGroup.name.archaic_charms"
+            },
+            "items": [
+              "dorios:abyssal_essence",
+              "dorios:blood_pact",
+              "dorios:chronoshard",
+              "dorios:endless_eye",
+              "dorios:gluttons_seal",
+              "dorios:jungle_reliquary",
+              "dorios:phoenix_ash_sigil",
+              "dorios:sculk_resonator",
+              "dorios:stormbound_idol",
+              "dorios:void_covenant",
+              "dorios:worldroot_knot"
+            ]
+          },
+          {
+            "group_identifier": {
+              "icon": "dorios:adventurers_belt",
+              "name": "dorios:itemGroup.name.belts"
+            },
+            "items": [
+              "dorios:adventurers_belt",
+              "dorios:bloodbound_sash",
+              "dorios:builders_harness",
+              "dorios:hunters_bandolier",
+              "dorios:ironbound_girdle",
+              "dorios:magma_cinch",
+              "dorios:miners_tool_belt",
+              "dorios:ravager_horn_buckle",
+              "dorios:soulcatcher_belt",
+              "dorios:tideforged_girdle",
+              "dorios:toolwright_belt"
+            ]
+          },
+          {
+            "group_identifier": {
+              "icon": "dorios:bloodbound_amulet",
+              "name": "dorios:itemGroup.name.bloodbound_trinkets"
+            },
+            "items": [
+              "dorios:bloodstained_heart"
+            ]
+          },
+          {
+            "group_identifier": {
+              "icon": "dorios:travelers_cloak_pin",
+              "name": "dorios:itemGroup.name.body"
+            },
+            "items": [
+              "dorios:alchemists_cloak_pin",
+              "dorios:armadillo_shield_brooch",
+              "dorios:bloodbound_emblem",
+              "dorios:frost_quiver",
+              "dorios:idle_bloom",
+              "dorios:molten_quiver",
+              "dorios:phantom_membrane_mantle",
+              "dorios:spider_silk_mantle",
+              "dorios:tideforged_carapace",
+              "dorios:travelers_cloak_pin",
+              "dorios:venom_quiver"
+            ]
+          },
+          {
+            "group_identifier": {
+              "icon": "dorios:wayfarers_knot",
+              "name": "dorios:itemGroup.name.charms"
+            },
+            "items": [
+              "dorios:abyssal_orb",
+              "dorios:bloodtide_chalice",
+              "dorios:dead_abyssal_orb",
+              "dorios:desert_scarab_charm",
+              "dorios:lost_allay_bell",
+              "dorios:miners_token",
+              "dorios:obsidian_skull",
+              "dorios:purity_blossom",
+              "dorios:stronghold_eye_charm",
+              "dorios:tideforged_stars",
+              "dorios:wayfarers_knot"
+            ]
+          },
+          {
+            "group_identifier": {
+              "icon": "dorios:stone_guardian_doll",
+              "name": "dorios:itemGroup.name.dolls"
+            },
+            "items": [
+              "dorios:creeper_doll",
+              "dorios:guardian_effigy",
+              "dorios:hollow_doll",
+              "dorios:leech_doll",
+              "dorios:lucky_ragdoll",
+              "dorios:marionette_of_spite",
+              "dorios:packed_snow_doll",
+              "dorios:shipwrecked_doll",
+              "dorios:stone_guardian_doll",
+              "dorios:straw_effigy",
+              "dorios:voodoo"
+            ]
+          },
+          {
+            "group_identifier": {
+              "icon": "dorios:marksman_monocle",
+              "name": "dorios:itemGroup.name.facewear"
+            },
+            "items": [
+              "dorios:copper_prospecting_lens",
+              "dorios:echo_visor",
+              "dorios:ember_respirator",
+              "dorios:ender_visor",
+              "dorios:huskbone_mask",
+              "dorios:marksman_monocle",
+              "dorios:mirror_mask",
+              "dorios:night_vision_goggles",
+              "dorios:night_vision_mask",
+              "dorios:plague_doctor_mask",
+              "dorios:veil_of_silence"
+            ]
+          },
+          {
+            "group_identifier": {
+              "icon": "dorios:featherstep_anklets",
+              "name": "dorios:itemGroup.name.feet"
+            },
+            "items": [
+              "dorios:cloud_steps_boots",
+              "dorios:featherstep_anklets",
+              "dorios:frostwalker_soles",
+              "dorios:goatstep_anklets",
+              "dorios:lava_waders",
+              "dorios:rootwalker_sandals",
+              "dorios:sandstrider_boots",
+              "dorios:shadowstep_greaves",
+              "dorios:slimebound_boots",
+              "dorios:tidewalker_fins",
+              "dorios:weighted_sabaton_charms"
+            ]
+          },
+          {
+            "group_identifier": {
+              "icon": "dorios:duelist_wraps",
+              "name": "dorios:itemGroup.name.gauntlets"
+            },
+            "items": [
+              "dorios:duelist_wraps",
+              "dorios:fire_claw",
+              "dorios:fire_gauntlet",
+              "dorios:hoglin_tusk_gauntlet",
+              "dorios:ice_claw",
+              "dorios:ice_gauntlet",
+              "dorios:impact_glove",
+              "dorios:tideforged_knuckles",
+              "dorios:venom_claw",
+              "dorios:venom_gauntlet",
+              "dorios:wind_bracer"
+            ]
+          },
+          {
+            "group_identifier": {
+              "icon": "dorios:abyssal_diver_helmet",
+              "name": "dorios:itemGroup.name.hats"
+            },
+            "items": [
+              "dorios:abyssal_diver_helmet",
+              "dorios:beekeepers_hat",
+              "dorios:broken_paladin_helmet",
+              "dorios:crown_of_last_light",
+              "dorios:deepdelvers_cap",
+              "dorios:paladin_circlet",
+              "dorios:restored_paladin_helmet",
+              "dorios:stormcaller_hood",
+              "dorios:tideforged_crown",
+              "dorios:trial_champion_crown",
+              "dorios:witchs_crooked_hat"
+            ]
+          },
+          {
+            "group_identifier": {
+              "icon": "dorios:dragon_heart",
+              "name": "dorios:itemGroup.name.hearty_charms"
+            },
+            "items": [
+              "dorios:black_heart",
+              "dorios:candy_heart",
+              "dorios:dragon_heart",
+              "dorios:eternal_heart",
+              "dorios:immaculate_heart",
+              "dorios:rotten_heart",
+              "dorios:sacred_heart",
+              "dorios:soul_heart",
+              "dorios:warden_heart",
+              "dorios:wither_heart"
             ]
           },
           {
@@ -30,6 +235,42 @@
               "dorios:heavy_miner_ring",
               "dorios:heavy_runner_ring",
               "dorios:heavy_warrior_ring"
+            ]
+          },
+          {
+            "group_identifier": {
+              "icon": "dorios:iron_locket",
+              "name": "dorios:itemGroup.name.necklaces"
+            },
+            "items": [
+              "dorios:blazed_heart_necklace",
+              "dorios:blood_pendant",
+              "dorios:cracked_bastion_medallion",
+              "dorios:emerald_chain",
+              "dorios:ghast_tear_locket",
+              "dorios:iron_locket",
+              "dorios:mender_pendant",
+              "dorios:rabbit_rush",
+              "dorios:repair_talis",
+              "dorios:rush_of_fear",
+              "dorios:tideforged_pendant"
+            ]
+          },
+          {
+            "group_identifier": {
+              "icon": "dorios:guardian_ring",
+              "name": "dorios:itemGroup.name.rings"
+            },
+            "items": [
+              "dorios:breeze_core_loop",
+              "dorios:endermite_loop",
+              "dorios:guardian_ring",
+              "dorios:healer_ring",
+              "dorios:miner_ring",
+              "dorios:ominous_key_ring",
+              "dorios:runner_ring",
+              "dorios:silverfish_scale_ring",
+              "dorios:warrior_ring"
             ]
           },
           {
@@ -55,59 +296,23 @@
           },
           {
             "group_identifier": {
-              "icon": "dorios:dragon_heart",
-              "name": "dorios:itemGroup.name.hearty_charms"
+              "icon": "dorios:wardstone",
+              "name": "dorios:itemGroup.name.talismans"
             },
             "items": [
-              "dorios:rotten_heart",
-              "dorios:candy_heart",
-              "dorios:black_heart",
-              "dorios:soul_heart",
-              "dorios:eternal_heart",
-              "dorios:immaculate_heart",
-              "dorios:sacred_heart",
-              "dorios:warden_heart",
-              "dorios:wither_heart",
-              "dorios:dragon_heart"
-            ]
-          },
-          {
-            "group_identifier": {
-              "icon": "dorios:abyssal_sun_amulet",
-              "name": "dorios:itemGroup.name.abyssal_trinkets"
-            },
-            "items": [
-              "dorios:dead_abyssal_orb",
               "dorios:abyssal_clam_shell",
-              "dorios:abyssal_orb",
-              "dorios:abyssal_essence",
-              "dorios:abyssal_diver_helmet",
-              "dorios:abyssal_sun_amulet"
-            ]
-          },
-          {
-            "group_identifier": {
-              "icon": "dorios:fire_claw",
-              "name": "dorios:itemGroup.name.gauntlets_and_claws"
-            },
-            "items": [
-              "dorios:fire_gauntlet",
-              "dorios:fire_claw",
-              "dorios:ice_gauntlet",
-              "dorios:ice_claw",
-              "dorios:venom_gauntlet",
-              "dorios:venom_claw"
-            ]
-          },
-          {
-            "group_identifier": {
-              "icon": "dorios:molten_quiver",
-              "name": "dorios:itemGroup.name.quivers"
-            },
-            "items": [
-              "dorios:frost_quiver",
-              "dorios:molten_quiver",
-              "dorios:venom_quiver"
+              "dorios:bloodgem",
+              "dorios:end_city_orb",
+              "dorios:harvesters_token",
+              "dorios:holy_cross",
+              "dorios:hunters_fang",
+              "dorios:ocean_coin",
+              "dorios:quarry_sigil",
+              "dorios:stormglass_talisman",
+              "dorios:tideforged_eye",
+              "dorios:totem_of_momentum",
+              "dorios:wardstone",
+              "dorios:wayfinder_compass"
             ]
           },
           {
@@ -116,69 +321,8 @@
               "name": "dorios:itemGroup.name.tideforged_trinkets"
             },
             "items": [
-              "dorios:tideforged_pendant",
-              "dorios:tideforged_carapace",
               "dorios:tideforged_heart",
-              "dorios:tideforged_eye",
-              "dorios:tideforged_stars",
-              "dorios:tideforged_ring",
-              "dorios:tideforged_knuckles"
-            ]
-          },
-          {
-            "group_identifier": {
-              "icon": "dorios:bloodbound_amulet",
-              "name": "dorios:itemGroup.name.bloodbound_trinkets"
-            },
-            "items": [
-              "dorios:blood_pendant",
-              "dorios:bloodgem",
-              "dorios:bloodstained_heart",
-              "dorios:bloodbound_emblem",
-              "dorios:voodoo",
-              "dorios:bloodtide_chalice",
-              "dorios:bloodbound_amulet",
-              "dorios:blood_pact"
-            ]
-          },
-          {
-            "group_identifier": {
-              "icon": "dorios:night_vision_mask",
-              "name": "dorios:itemGroup.name.head_trinkets"
-            },
-            "items": [
-              "dorios:night_vision_goggles",
-              "dorios:night_vision_mask",
-              "dorios:broken_paladin_helmet",
-              "dorios:restored_paladin_helmet"
-            ]
-          },
-          {
-            "group_identifier": {
-              "icon": "dorios:cloud_steps_boots",
-              "name": "dorios:itemGroup.name.movement_trinkets"
-            },
-            "items": [
-              "dorios:lava_waders",
-              "dorios:cloud_steps_boots",
-              "dorios:rabbit_rush",
-              "dorios:rush_of_fear"
-            ]
-          },
-          {
-            "group_identifier": {
-              "icon": "dorios:holy_cross",
-              "name": "dorios:itemGroup.name.relics"
-            },
-            "items": [
-              "dorios:purity_blossom",
-              "dorios:idle_bloom",
-              "dorios:mender_pendant",
-              "dorios:repair_talis",
-              "dorios:obsidian_skull",
-              "dorios:holy_cross",
-              "dorios:blazing_amulet",
-              "dorios:blazed_heart_necklace"
+              "dorios:tideforged_ring"
             ]
           }
         ]
@@ -186,6 +330,26 @@
       {
         "category_name": "items",
         "groups": [
+          {
+            "group_identifier": {
+              "icon": "dorios:empty_belt",
+              "name": "dorios:itemGroup.name.belt_bases"
+            },
+            "items": [
+              "dorios:empty_belt",
+              "dorios:reinforced_belt"
+            ]
+          },
+          {
+            "group_identifier": {
+              "icon": "dorios:blank_mask",
+              "name": "dorios:itemGroup.name.face_bases"
+            },
+            "items": [
+              "dorios:blank_mask",
+              "dorios:enchanted_visor_frame"
+            ]
+          },
           {
             "group_identifier": {
               "icon": "dorios:empty_ring",
@@ -206,9 +370,9 @@
               "name": "dorios:itemGroup.name.scrolls"
             },
             "items": [
+              "dorios:recover_scroll",
               "dorios:scroll",
-              "dorios:stats_scroll",
-              "dorios:recover_scroll"
+              "dorios:stats_scroll"
             ]
           }
         ]

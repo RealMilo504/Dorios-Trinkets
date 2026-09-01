@@ -1,0 +1,15 @@
+{
+  "format_version": "1.20.80",
+  "minecraft:item": {
+    "description": {
+      "identifier": "dorios:geode_amulet",
+      "menu_category": {
+        "category": "equipment"
+      }
+    },
+    "components": {
+      "minecraft:icon": "dorios_geode_amulet",
+      "minecraft:max_stack_size": 1
+    }
+  }
+}

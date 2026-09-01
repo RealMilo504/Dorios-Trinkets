@@ -1,0 +1,30 @@
+{
+  "format_version": "1.20.80",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "dorios:hunters_fang"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "ingredients": [
+      {
+        "item": "minecraft:bone"
+      },
+      {
+        "item": "minecraft:arrow"
+      },
+      {
+        "item": "minecraft:rabbit_foot"
+      }
+    ],
+    "result": {
+      "item": "dorios:hunters_fang"
+    },
+    "unlock": [
+      {
+        "item": "minecraft:bone"
+      }
+    ]
+  }
+}

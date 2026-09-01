@@ -1,0 +1,15 @@
+{
+  "format_version": "1.20.80",
+  "minecraft:item": {
+    "description": {
+      "identifier": "dorios:ocean_coin",
+      "menu_category": {
+        "category": "equipment"
+      }
+    },
+    "components": {
+      "minecraft:icon": "dorios_ocean_coin",
+      "minecraft:max_stack_size": 1
+    }
+  }
+}

@@ -1,0 +1,1 @@
+{"format_version":"1.20.80","minecraft:recipe_shaped":{"description":{"identifier":"dorios:empty_belt"},"tags":["crafting_table"],"key":{"L":{"item":"minecraft:leather"},"S":{"item":"minecraft:string"}},"pattern":["S S","LLL","S S"],"result":{"item":"dorios:empty_belt"},"unlock":[{"item":"minecraft:leather"}]}}

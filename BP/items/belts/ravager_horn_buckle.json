@@ -1,0 +1,15 @@
+{
+  "format_version": "1.20.80",
+  "minecraft:item": {
+    "description": {
+      "identifier": "dorios:ravager_horn_buckle",
+      "menu_category": {
+        "category": "equipment"
+      }
+    },
+    "components": {
+      "minecraft:icon": "dorios_ravager_horn_buckle",
+      "minecraft:max_stack_size": 1
+    }
+  }
+}

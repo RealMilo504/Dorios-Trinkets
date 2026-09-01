@@ -1,0 +1,1 @@
+{"format_version":"1.20.80","minecraft:recipe_shaped":{"description":{"identifier":"dorios:builders_harness"},"tags":["crafting_table"],"key":{"B":{"item":"minecraft:bricks"},"R":{"item":"dorios:reinforced_belt"},"S":{"item":"minecraft:scaffolding"}},"pattern":["SBS","BRB","SBS"],"result":{"item":"dorios:builders_harness"},"unlock":[{"item":"minecraft:scaffolding"}]}}

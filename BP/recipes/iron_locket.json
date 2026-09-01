@@ -1,0 +1,30 @@
+{
+  "format_version": "1.20.80",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "dorios:iron_locket"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "ingredients": [
+      {
+        "item": "minecraft:iron_ingot"
+      },
+      {
+        "item": "minecraft:chain"
+      },
+      {
+        "item": "minecraft:shield"
+      }
+    ],
+    "result": {
+      "item": "dorios:iron_locket"
+    },
+    "unlock": [
+      {
+        "item": "minecraft:iron_ingot"
+      }
+    ]
+  }
+}

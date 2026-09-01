@@ -1,6 +1,10 @@
 # RPG Core — Condition & Event Catalog
 Based on events in the documentation, components already available in StatsCore, and existing registers from Dorios' Trinkets, the following list shows possible improvements to the core and core conditions.
 
+> This is the raw event backlog. Contracts, architecture, migration phases, cost
+> classes, and acceptance gates live in
+> [the RPG Core integration plan](../../docs/RPG_CORE_INTEGRATION_PLAN.md).
+
 
 ## 1. Entity State
 ### Health
@@ -428,3 +432,4 @@ conditions: {
         }
     }
 }
+```

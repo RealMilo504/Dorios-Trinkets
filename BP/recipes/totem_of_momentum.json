@@ -1,0 +1,30 @@
+{
+  "format_version": "1.20.80",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "dorios:totem_of_momentum"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "ingredients": [
+      {
+        "item": "minecraft:breeze_rod"
+      },
+      {
+        "item": "minecraft:wind_charge"
+      },
+      {
+        "item": "minecraft:amethyst_shard"
+      }
+    ],
+    "result": {
+      "item": "dorios:totem_of_momentum"
+    },
+    "unlock": [
+      {
+        "item": "minecraft:breeze_rod"
+      }
+    ]
+  }
+}
